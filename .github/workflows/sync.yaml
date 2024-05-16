@@ -46,21 +46,20 @@ jobs:
       - name: Run JSHint
         run: jshint "**/*.js" --exclude node_modules
 
-  ESLint:
+  super-lint:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Download ESLint
-        run: curl -L -o eslint https://raw.githubusercontent.com/eslint/eslint/main/bin/eslint.js
-
-      - name: Make ESLint executable
-        run: chmod +x eslint
-
-      - name: Run ESLint
-        run: ./eslint "**/*.js" --ignore-pattern "node_modules/*"
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: dev-Boris
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTERS: "JAVASCRIPT,HTML,CSS"
+          VALIDATE_ALL_CODEBASE: true
 
   htmlproofer:
     runs-on: ubuntu-latest
