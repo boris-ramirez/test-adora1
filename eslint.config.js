@@ -1,8 +1,8 @@
-export default [
-  {
+module.exports = {
+  overrides: {
+    files: ["*.js"],
     rules: {
-      "no-unused-vars": "error",
-      "no-undef": "error",
+      semi: "error",
     },
   },
-];
+};
