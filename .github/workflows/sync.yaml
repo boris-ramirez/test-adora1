@@ -64,7 +64,15 @@ jobs:
                 "no-unused-vars": "error",
                 "no-console": "error",
                 "semi": ["error", "always"],
-                "quotes": ["error", "double"]
+                "quotes": ["error", "double"],
+                "no-restricted-globals": ["error", "document"],
+                "no-restricted-syntax": [
+                  "error",
+                  {
+                    "selector": "CallExpression[callee.object.name='document'][callee.property.name=/^(getElementById|getElementsByClassName|getElementsByTagName)$/]",
+                    "message": "Avoid using document.getElementById, getElementsByClassName, and getElementsByTagName directly."
+                  }
+                ]
               }
             }
           ];' > eslint.config.mjs
