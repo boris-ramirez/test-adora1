@@ -27,6 +27,7 @@ jobs:
 
       - name: Prettify code
         run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
+
   lint:
     runs-on: ubuntu-latest
 
@@ -39,11 +40,15 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Install StandardJS
-        run: npm install -g standard
+      - name: Install ESLint and Prettier plugins
+        run: npm install -g eslint eslint-plugin-prettier eslint-config-prettier prettier
 
-      - name: Run StandardJS
-        run: standard "**/*.js" --ignore node_modules
+      - name: Run ESLint
+        run: eslint "**/*.js" --ignore-pattern "node_modules/*"
+
+      - name: Run Prettier
+        run: prettier --check "**/*.js" --ignore-path .prettierignore
+
   htmlproofer:
     runs-on: ubuntu-latest
     steps:
