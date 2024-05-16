@@ -62,7 +62,7 @@ jobs:
               },
               rules: {
                 "no-unused-vars": "error",
-                "no-console": "warn",
+                "no-console": "error",
                 "semi": ["error", "always"],
                 "quotes": ["error", "double"]
               }
@@ -76,7 +76,7 @@ jobs:
         run: npm install
 
       - name: Run ESLint
-        run: npx eslint "**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*"
+        run: npx eslint "**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*" -f codeframe
 
       - name: Clean up temporary files
         run: rm -rf package.json package-lock.json node_modules eslint.config.mjs
