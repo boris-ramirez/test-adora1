@@ -1,0 +1,83 @@
+@import url("http://fonts.googleapis.com/css?family=Oswald");
+@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed");
+
+.carousel-container {
+  position: relative;
+  max-width: 60%;
+  margin: 100px auto;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item {
+  flex: 0 0 calc(100% / var(--columns) - 10px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#btn-prev,
+#btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(75, 34, 113);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  padding: 7px 10px;
+  z-index: 2;
+  border-radius: 100%;
+}
+
+#btn-prev {
+  left: -80px;
+}
+
+#btn-next {
+  right: -80px;
+}
+
+#btn-prev b,
+#btn-next b {
+  font-size: 26px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: #333;
+}

@@ -1,0 +1,57 @@
+.hero {
+    position:relative;
+}
+.HeroVideo {
+    display: block;
+    overflow: hidden;
+}
+.HeroName {
+    color:#ffffff;
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 8%;
+}
+
+.HeroName1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: -5%;
+    letter-spacing: 13px;
+    line-height: 59px;
+}
+.HeroName2 {
+    letter-spacing: 0px;
+    display:block;
+
+}
+.HeroSlogan {
+    display: inline-block;
+    color:#ffffff;
+    overflow:hidden;
+    position: absolute;
+    top: 38%;
+    left: 505px;
+}
+.HeroSlogan h2 {
+    font-size: 2rem;
+    letter-spacing: 9px;
+    font-weight: 100;
+    text-align: left;
+    line-height: 41px;
+}
+
+.HeroSlogan span {
+    display:block;
+}
+
+.HeroSlogan2{
+    letter-spacing: 9.5px;
+}
+.HeroSlogan3{
+    letter-spacing: 18px;
+}
+
+.HeroSlogan span:hover {
+    font-size:5rem;
+}

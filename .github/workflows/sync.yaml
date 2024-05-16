@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - dev-Boris
+  pull_request:
+    branches:
+      - dev-Boris
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install Prettier
+        run: npm install prettier
+
+      - name: Prettify code
+        run: npx prettier --write "**/*.{js,jsx,ts,tsx,md}"
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npx eslint components/**/*.js
+
+  htmlproofer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install HTMLProofer
+        run: gem install html-proofer
+
+      - name: Check HTML
+        run: htmlproofer ./ --allow-missing-href
