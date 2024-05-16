@@ -39,8 +39,29 @@ jobs:
         with:
           node-version: "18"
 
+      - name: Create ESLint configuration file
+        run: |
+          echo '{
+            "env": {
+              "browser": true,
+              "es2021": true
+            },
+            "extends": "eslint:recommended",
+            "parserOptions": {
+              "ecmaVersion": 12,
+              "sourceType": "module"
+            },
+            "rules": {}
+          }' > .eslintrc.json
+
+      - name: Verify ESLint configuration file
+        run: cat .eslintrc.json
+
+      - name: Install ESLint globally
+        run: npm install -g eslint
+
       - name: Install dependencies
-        run: npm install eslint
+        run: npm install
 
       - name: Run ESLint
         uses: sibiraj-s/action-eslint@v3
