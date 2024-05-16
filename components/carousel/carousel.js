@@ -1,5 +1,5 @@
 let currentIndex = 0;
-const inner = document.querySelector(".carousel-inner");
+const inner = document.querySelecto(".carousel-inner");
 const prevButton = document.getElementById("btn-prev");
 const nextButton = document.getElementById("btn-next");
 const indicatorsContainer = document.querySelector(".carousel-indicators");
