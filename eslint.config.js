@@ -8,8 +8,7 @@ module.exports = [
     files: ["**/*.js"],
     languageOptions: {
       globals: {
-        ...globals.browser,
-        myCustomGlobal: "readonly",
+        window: true,
       },
     },
   },
