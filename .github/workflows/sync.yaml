@@ -45,6 +45,26 @@ jobs:
 
       - name: Run JSHint
         run: jshint "**/*.js" --exclude node_modules
+  lint_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npx eslint "**/*.js" --ignore-pattern "node_modules/*"
+
+      - name: Run Mocha
+        run: npx mocha
 
   htmlproofer:
     runs-on: ubuntu-latest
