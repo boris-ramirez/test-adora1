@@ -1,17 +1,15 @@
-module.exports = {
-  overrides: [
-    {
-      files: ["**/*.js"],
-      env: {
-        es6: true,
-      },
+module.exports = [
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      ecmaVersion: 2018,
       globals: {
-        window: true,
-      },
-      rules: {
-        "no-unused-vars": "error",
-        "no-undef": "error",
+        window: "readonly",
       },
     },
-  ],
-};
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error",
+    },
+  },
+];
