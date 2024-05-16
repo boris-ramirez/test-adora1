@@ -9,7 +9,7 @@ on:
       - dev-Boris
 
 jobs:
-  prettier:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,49 +23,15 @@ jobs:
           node-version: "18"
 
       - name: Install Prettier globally
-        run: npm install -g prettier
+        run: npm install -g eslint
+
+      - name: eslint code
+        run: eslint src/**/*.js
 
       - name: Prettify code
-        run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
-
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: creyD/prettier_action@v4.3
         with:
-          node-version: "16"
-
-      - name: Install JSHint
-        run: npm install -g jshint
-
-      - name: Run JSHint
-        run: jshint "**/*.js" --exclude node_modules
-
-  super-lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Super-linter
-        uses: super-linter/super-linter@v6.5.0
-        env:
-          DEFAULT_BRANCH: dev-Boris
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTERS: "JAVASCRIPT,HTML"
-          VALIDATE_ALL_CODEBASE: true
-
-  htmlproofer:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+          prettier_options: --write **/*.{js,md}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
