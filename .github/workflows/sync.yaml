@@ -39,6 +39,17 @@ jobs:
         with:
           node-version: "18"
 
+      - name: Create temporary package.json
+        run: |
+          echo '{
+            "name": "temporary-project",
+            "version": "1.0.0",
+            "private": true,
+            "devDependencies": {
+              "eslint": "^9.2.0"
+            }
+          }' > package.json
+
       - name: Create ESLint configuration file
         run: |
           echo '{
@@ -57,11 +68,14 @@ jobs:
       - name: Verify ESLint configuration file
         run: cat .eslintrc.json
 
-      - name: Install ESLint globally
-        run: npm install -g eslint
+      - name: Install dependencies
+        run: npm install
 
       - name: Run ESLint
-        run: eslint "**/*.js" --ignore-pattern "node_modules/*"
+        run: npx eslint "**/*.js" --ignore-pattern "node_modules/*"
+
+      - name: Clean up temporary files
+        run: rm -rf package.json package-lock.json node_modules
 
   htmlproofer:
     runs-on: ubuntu-latest
