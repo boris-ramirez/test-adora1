@@ -1,27 +1,27 @@
 module.exports = [
-  js.configs.recommended, // Usar la configuración recomendada por ESLint
+  js.configs.recommended,
   {
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
       globals: {
-        ...globals.browser, // Importa variables globales del navegador
-        myCustomGlobal: "readonly", // Tu variable global personalizada
+        ...globals.browser,
+        myCustomGlobal: "readonly",
       },
     },
     rules: {
-      "no-console": "off", // Ejemplo de regla personalizada
-      quotes: ["error", "single"], // Ejemplo de regla para comillas simples
-      semi: ["error", "always"], // Ejemplo de regla para punto y coma obligatorio
+      "no-console": "off",
+      quotes: ["error", "single"],
+      semi: ["error", "always"],
     },
-    ignores: ["**/temp.js", "config/*"], // Ignorar archivos y directorios específicos
+    ignores: ["**/temp.js", "config/*"],
   },
   {
     files: ["tests/**"],
     languageOptions: {
       globals: {
-        ...globals.mocha, // Variables globales para Mocha
+        ...globals.mocha,
       },
     },
   },
