@@ -1,4 +1,3 @@
-const globals = require("globals");
 module.exports = [
   {
     rules: {
