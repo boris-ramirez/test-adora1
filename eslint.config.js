@@ -15,7 +15,6 @@ module.exports = [
       "no-unused-vars": "error", // Variables no utilizadas
       "no-undef": "error", // Variables indefinidas
       "no-console": "off", // Permitir console.log
-      quotes: ["error", "single"], // Comillas simples
       semi: ["error", "always"], // Punto y coma obligatorio
       "no-extra-semi": "error", // Punto y coma extra
       curly: "error", // Uso de llaves en declaraciones
