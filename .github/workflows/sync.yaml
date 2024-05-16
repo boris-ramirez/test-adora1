@@ -27,68 +27,24 @@ jobs:
 
       - name: Prettify code
         run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
-
-  eslint:
+ lint:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
 
-      - name: Create temporary package.json
-        run: |
-          echo '{
-            "name": "temporary-project",
-            "version": "1.0.0",
-            "private": true,
-            "type": "module",
-            "devDependencies": {
-              "eslint": "^9.2.0",
-              "@eslint/js": "^8.2.0"
-            }
-          }' > package.json
+    - name: Install JSHint
+      run: npm install -g jshint
 
-      - name: Create ESLint configuration file
-        run: |
-          echo 'import js from "@eslint/js";
-          export default [
-            js.configs.recommended,
-            {
-              files: ["**/*.js"],
-              languageOptions: {
-                ecmaVersion: 12,
-                sourceType: "module",
-                globals: {
-                  window: "readonly",
-                  document: "readonly",
-                  fetch: "readonly",
-                  console: "readonly"
-                }
-              },
-              rules: {
-                "no-unused-vars": "error",
-                "no-console": "error",
-                "semi": ["error", "always"],
-                "quotes": ["error", "double"]
-              }
-            }
-          ];' > eslint.config.mjs
-
-      - name: Verify ESLint configuration file
-        run: cat eslint.config.mjs
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run ESLint
-        run: npx eslint "**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*"
-
-      - name: Clean up temporary files
-        run: rm -rf package.json package-lock.json node_modules eslint.config.mjs
+    - name: Run JSHint
+      run: jshint "**/*.js" --exclude node_modules
+      
   htmlproofer:
     runs-on: ubuntu-latest
     steps:
