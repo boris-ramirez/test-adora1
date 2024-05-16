@@ -1,12 +1,8 @@
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
+export default [
+  {
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error",
+    },
   },
-  extends: "eslint:recommended",
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: "module",
-  },
-  rules: {},
-};
+];
