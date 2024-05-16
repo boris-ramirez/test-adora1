@@ -1,5 +1,3 @@
-const globals = require("globals");
-
 module.exports = {
   overrides: [
     {
@@ -7,7 +5,9 @@ module.exports = {
       env: {
         es6: true,
       },
-      globals: globals.browser,
+      globals: {
+        window: true,
+      },
       rules: {
         "no-unused-vars": "error",
         "no-undef": "error",
