@@ -55,7 +55,7 @@ jobs:
         run: |
           echo 'export default [
             {
-              files: ["src/**/*.js"],
+              files: ["**/*.js"],
               languageOptions: {
                 ecmaVersion: 12,
                 sourceType: "module"
@@ -76,7 +76,7 @@ jobs:
         run: npm install
 
       - name: Run ESLint
-        run: npx eslint "src/**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*"
+        run: npx eslint "**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*"
 
       - name: Clean up temporary files
         run: rm -rf package.json package-lock.json node_modules eslint.config.mjs
