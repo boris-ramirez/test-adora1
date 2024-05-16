@@ -57,16 +57,11 @@ jobs:
       - name: Verify ESLint configuration file
         run: cat .eslintrc.json
 
-      - name: Install ESLint
+      - name: Install ESLint globally
         run: npm install -g eslint
 
-      - name: Install project dependencies
-        run: npm install
-
       - name: Run ESLint
-        uses: sibiraj-s/action-eslint@v3
-        with:
-          eslint-args: '--ignore-pattern "node_modules/*"'
+        run: eslint "**/*.js" --ignore-pattern "node_modules/*"
 
   htmlproofer:
     runs-on: ubuntu-latest
