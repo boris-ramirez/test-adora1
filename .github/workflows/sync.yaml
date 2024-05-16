@@ -28,14 +28,23 @@ jobs:
       - name: Prettify code
         run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
 
-  build:
+  eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install modules
-        run: npm install
-      - name: Run ESLint
-        Run: npm run lint
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Run ESLint with a basic configuration
+        uses: sibiraj-s/action-eslint@v3
+        with:
+          eslint-args: "--ext .js,.jsx,.ts,.tsx"
+          extensions: "js,jsx,ts,tsx"
+          annotations: true
 
   htmlproofer:
     runs-on: ubuntu-latest
