@@ -1,4 +1,8 @@
-module.exports = [
+import { configs as jsConfigs } from "@eslint/js";
+import globals from "globals";
+
+export default [
+  jsConfigs.recommended, // Usar la configuración recomendada por ESLint
   {
     files: ["**/*.js"],
     languageOptions: {
