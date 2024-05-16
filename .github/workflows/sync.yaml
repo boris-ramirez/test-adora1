@@ -22,11 +22,11 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Install Prettier
-        run: npm install prettier
+      - name: Install Prettier globally
+        run: npm install -g prettier
 
       - name: Prettify code
-        run: npx prettier --write "**/*.{js,jsx,ts,tsx,md}"
+        run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
 
   eslint:
     runs-on: ubuntu-latest
@@ -39,11 +39,11 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install ESLint globally
+        run: npm install -g eslint
 
       - name: Run ESLint
-        run: npx eslint components/**/*.js
+        run: eslint components/**/*.js
 
   htmlproofer:
     runs-on: ubuntu-latest
