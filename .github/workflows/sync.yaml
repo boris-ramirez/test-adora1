@@ -28,7 +28,7 @@ jobs:
       - name: Prettify code
         run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
 
-  eslint:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
