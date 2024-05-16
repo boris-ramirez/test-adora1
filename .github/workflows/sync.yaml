@@ -56,8 +56,6 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
-          DEFAULT_BRANCH: dev-Boris
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTERS: "JAVASCRIPT,HTML,CSS"
           VALIDATE_ALL_CODEBASE: true
 
