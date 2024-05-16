@@ -28,20 +28,58 @@ jobs:
       - name: Prettify code
         run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
 
-eslint:
+  eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
-      - run: npm ci # or yarn install
-      - uses: sibiraj-s/action-eslint@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }} # optional
-          eslint-args: '--ignore-path=.gitignore --quiet'
-          extensions: 'js,jsx,ts,tsx'
-          annotations: true
+          node-version: "18"
+
+      - name: Create temporary package.json
+        run: |
+          echo '{
+            "name": "temporary-project",
+            "version": "1.0.0",
+            "private": true,
+            "type": "module",
+            "devDependencies": {
+              "eslint": "^9.2.0"
+            }
+          }' > package.json
+
+      - name: Create ESLint configuration file
+        run: |
+          echo 'export default [
+            {
+              files: ["**/*.js"],
+              languageOptions: {
+                ecmaVersion: 12,
+                sourceType: "module"
+              },
+              rules: {
+                "no-unused-vars": "error",
+                "no-console": "warn",
+                "semi": ["error", "always"],
+                "quotes": ["error", "double"]
+              }
+            }
+          ];' > eslint.config.mjs
+
+      - name: Verify ESLint configuration file
+        run: cat eslint.config.mjs
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npx eslint "**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*"
+
+      - name: Clean up temporary files
+        run: rm -rf package.json package-lock.json node_modules eslint.config.mjs
 
   htmlproofer:
     runs-on: ubuntu-latest
