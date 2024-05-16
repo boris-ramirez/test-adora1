@@ -47,21 +47,27 @@ jobs:
             "private": true,
             "type": "module",
             "devDependencies": {
-              "eslint": "^9.2.0"
+              "eslint": "^9.2.0",
+              "@eslint/js": "^8.2.0"
             }
           }' > package.json
 
       - name: Create ESLint configuration file
         run: |
-          echo 'export default [
+          echo 'import js from "@eslint/js";
+          export default [
+            js.configs.recommended,
             {
               files: ["**/*.js"],
               languageOptions: {
                 ecmaVersion: 12,
                 sourceType: "module"
               },
-              linterOptions: {
-                extends: "eslint:recommended"
+              rules: {
+                "no-unused-vars": "error",
+                "no-console": "error",
+                "semi": ["error", "always"],
+                "quotes": ["error", "double"]
               }
             }
           ];' > eslint.config.mjs
