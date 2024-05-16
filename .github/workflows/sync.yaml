@@ -22,8 +22,8 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Install ESLint and dependencies
-        run: npm install -g eslint @eslint/js globals
+      - name: Install ESLint
+        run: npm install -g eslint
 
       - name: eslint code
         run: eslint "**/*.js" --debug
