@@ -31,19 +31,9 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-
-      - name: Install ESLint globally
-        run: npm install -g eslint
-
-      - name: Run ESLint
-        run: eslint components/**/*.js
+      - uses: actions/checkout@v2
+      - name: Analyze code statically using ESLint
+        uses: moneyforward/eslint-action@v0
 
   htmlproofer:
     runs-on: ubuntu-latest
