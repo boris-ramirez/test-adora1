@@ -1,15 +1,10 @@
-import { configs as jsConfigs } from "@eslint/js";
-import globals from "globals";
-
-export default [
-  jsConfigs.recommended,
+module.exports = [
   {
-    files: ["**/*.js"], // Asegúrate de que esta línea esté incluyendo todos los archivos .js
+    ignores: ["eslint.config.js"], // Ignorar el archivo de configuración
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
       globals: {
-        ...globals.browser,
         window: "readonly",
         document: "readonly",
         console: "readonly",
@@ -19,6 +14,21 @@ export default [
     rules: {
       "no-unused-vars": "error",
       "no-undef": "error",
+      "no-restricted-globals": [
+        "error",
+        {
+          name: "document",
+          message: "Use `window.document` instead.",
+        },
+      ],
+      "no-restricted-properties": [
+        "error",
+        {
+          object: "document",
+          property: "getEleme",
+          message: "Did you mean `getElementById`?",
+        },
+      ],
     },
   },
 ];
