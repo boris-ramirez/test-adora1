@@ -52,31 +52,31 @@ jobs:
 
       - name: Create ESLint configuration file
         run: |
-          echo 'module.exports = {
-            "env": {
-              "browser": true,
-              "es2021": true
-            },
-            "extends": "eslint:recommended",
-            "parserOptions": {
-              "ecmaVersion": 12,
-              "sourceType": "module"
-            },
-            "rules": {}
-          };' > .eslintrc.js
+          echo 'export default [
+            {
+              files: ["**/*.js"],
+              languageOptions: {
+                ecmaVersion: 12,
+                sourceType: "module"
+              },
+              rules: {
+                "no-unused-vars": "warn",
+                "no-console": "off"
+              }
+            }
+          ];' > eslint.config.js
 
       - name: Verify ESLint configuration file
-        run: cat .eslintrc.js
+        run: cat eslint.config.js
 
       - name: Install dependencies
         run: npm install
 
       - name: Run ESLint
-        run: npx eslint "**/*.js" --config .eslintrc.js --ignore-pattern "node_modules/*"
+        run: npx eslint "**/*.js" --config eslint.config.js --ignore-pattern "node_modules/*"
 
       - name: Clean up temporary files
-        run: rm -rf package.json package-lock.json node_modules
-
+        run: rm -rf package.json package-lock.json node_modules eslint.config.js
   htmlproofer:
     runs-on: ubuntu-latest
     steps:
