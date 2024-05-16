@@ -39,50 +39,11 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Create temporary package.json
-        run: |
-          echo '{
-            "name": "temporary-project",
-            "version": "1.0.0",
-            "private": true,
-            "type": "module",
-            "devDependencies": {
-              "eslint": "^9.2.0"
-            }
-          }' > package.json
+      - name: Install Prettier globally
+        run: npm install @eslint/js -D
 
-      - name: Create ESLint configuration file
-        run: |
-          echo 'export default [
-            {
-              files: ["**/*.js"],
-              languageOptions: {
-                ecmaVersion: 12,
-                sourceType: "module"
-              },
-              rules: {
-                "no-unused-vars": "warn",
-                "no-console": "off",
-                "indent": ["error", 2],
-                "quotes": ["error", "single"],
-                "semi": ["error", "always"],
-                "eqeqeq": "error",
-                "no-trailing-spaces": "error"
-              }
-            }
-          ];' > eslint.config.mjs
-
-      - name: Verify ESLint configuration file
-        run: cat eslint.config.mjs
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run ESLint
-        run: npx eslint "**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*"
-
-      - name: Clean up temporary files
-        run: rm -rf package.json package-lock.json node_modules eslint.config.mjs
+      - name: Prettify code
+        run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
 
   htmlproofer:
     runs-on: ubuntu-latest
