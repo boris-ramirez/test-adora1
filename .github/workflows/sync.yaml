@@ -28,12 +28,13 @@ jobs:
       - name: Prettify code
         run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
 
-  eslint:
+eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Analyze code statically using ESLint
-        uses: moneyforward/eslint-action@v0
+      - uses: actions/checkout@v1
+      - uses: stefanoeb/eslint-action@1.0.2
+        with:
+          files: src/
 
   htmlproofer:
     runs-on: ubuntu-latest
