@@ -12,16 +12,22 @@ module.exports = [
       },
     },
     rules: {
-      "no-unused-vars": "error",
-      "no-undef": "error",
+      "no-unused-vars": "error", // Variables no utilizadas
+      "no-undef": "error", // Variables indefinidas
       "no-restricted-properties": [
         "error",
         {
           object: "document",
-          property: "getEleme",
-          message: "Did you mean `getElementById`?",
+          message:
+            "Verifica que estás utilizando el método correcto de document.",
         },
       ],
+      "no-console": "off", // Permitir console.log
+      quotes: ["error", "single"], // Comillas simples
+      semi: ["error", "always"], // Punto y coma obligatorio
+      "no-extra-semi": "error", // Punto y coma extra
+      curly: "error", // Uso de llaves en declaraciones
+      eqeqeq: ["error", "always"], // Comparación estricta
     },
   },
 ];
