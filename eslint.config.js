@@ -1,5 +1,4 @@
 module.exports = [
-  jsConfigs.recommended, // Usar la configuración recomendada por ESLint
   {
     files: ["**/*.js"],
     languageOptions: {
