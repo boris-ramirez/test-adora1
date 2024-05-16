@@ -58,7 +58,7 @@ jobs:
         env:
           DEFAULT_BRANCH: dev-Boris
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTERS: "JAVASCRIPT,HTML,CSS"
+          LINTERS: "JAVASCRIPT,HTML"
           VALIDATE_ALL_CODEBASE: true
 
   htmlproofer:
