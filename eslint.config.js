@@ -14,13 +14,6 @@ module.exports = [
     rules: {
       "no-unused-vars": "error",
       "no-undef": "error",
-      "no-restricted-globals": [
-        "error",
-        {
-          name: "document",
-          message: "Use `window.document` instead.",
-        },
-      ],
       "no-restricted-properties": [
         "error",
         {
