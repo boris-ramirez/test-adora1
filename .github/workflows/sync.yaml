@@ -61,7 +61,13 @@ jobs:
               files: ["**/*.js"],
               languageOptions: {
                 ecmaVersion: 12,
-                sourceType: "module"
+                sourceType: "module",
+                globals: {
+                  window: "readonly",
+                  document: "readonly",
+                  fetch: "readonly",
+                  console: "readonly"
+                }
               },
               rules: {
                 "no-unused-vars": "error",
@@ -83,7 +89,6 @@ jobs:
 
       - name: Clean up temporary files
         run: rm -rf package.json package-lock.json node_modules eslint.config.mjs
-
   htmlproofer:
     runs-on: ubuntu-latest
     steps:
