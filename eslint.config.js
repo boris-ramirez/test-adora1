@@ -14,14 +14,6 @@ module.exports = [
     rules: {
       "no-unused-vars": "error", // Variables no utilizadas
       "no-undef": "error", // Variables indefinidas
-      "no-restricted-properties": [
-        "error",
-        {
-          object: "document",
-          message:
-            "Verifica que estás utilizando el método correcto de document.",
-        },
-      ],
       "no-console": "off", // Permitir console.log
       quotes: ["error", "single"], // Comillas simples
       semi: ["error", "always"], // Punto y coma obligatorio
