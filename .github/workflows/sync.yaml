@@ -39,12 +39,26 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Run ESLint with a basic configuration
-        uses: sibiraj-s/action-eslint@v3
-        with:
-          eslint-args: "--ext .js,.jsx,.ts,.tsx"
-          extensions: "js,jsx,ts,tsx"
-          annotations: true
+      - name: Install ESLint globally
+        run: npm install -g eslint
+
+      - name: Create ESLint configuration file
+        run: |
+          echo '{
+            "env": {
+              "browser": true,
+              "es2021": true
+            },
+            "extends": "eslint:recommended",
+            "parserOptions": {
+              "ecmaVersion": 12,
+              "sourceType": "module"
+            },
+            "rules": {}
+          }' > .eslintrc.json
+
+      - name: Run ESLint
+        run: eslint . --ext .js,.jsx,.ts,.tsx
 
   htmlproofer:
     runs-on: ubuntu-latest
