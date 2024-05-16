@@ -34,35 +34,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      - name: Install ESLint globally
-        run: npm install -g eslint
-
-      - name: Create ESLint configuration file
-        run: |
-          echo '{
-            "env": {
-              "browser": true,
-              "es2021": true
-            },
-            "extends": "eslint:recommended",
-            "parserOptions": {
-              "ecmaVersion": 12,
-              "sourceType": "module"
-            },
-            "rules": {}
-          }' > .eslintrc.json
-
-      - name: Verify ESLint configuration file
-        run: cat .eslintrc.json
-
       - name: Run ESLint
-        run: eslint "**/*.js" --ignore-pattern "node_modules/*"
-
+        uses: sibiraj-s/action-eslint@v3
+        with:
+          eslint-args: '--ignore-pattern "node_modules/*"'
   htmlproofer:
     runs-on: ubuntu-latest
     steps:
