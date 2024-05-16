@@ -45,6 +45,7 @@ jobs:
             "name": "temporary-project",
             "version": "1.0.0",
             "private": true,
+            "type": "module",
             "devDependencies": {
               "eslint": "^9.2.0"
             }
@@ -64,19 +65,20 @@ jobs:
                 "no-console": "off"
               }
             }
-          ];' > eslint.config.js
+          ];' > eslint.config.mjs
 
       - name: Verify ESLint configuration file
-        run: cat eslint.config.js
+        run: cat eslint.config.mjs
 
       - name: Install dependencies
         run: npm install
 
       - name: Run ESLint
-        run: npx eslint "**/*.js" --config eslint.config.js --ignore-pattern "node_modules/*"
+        run: npx eslint "**/*.js" --config eslint.config.mjs --ignore-pattern "node_modules/*"
 
       - name: Clean up temporary files
-        run: rm -rf package.json package-lock.json node_modules eslint.config.js
+        run: rm -rf package.json package-lock.json node_modules eslint.config.mjs
+
   htmlproofer:
     runs-on: ubuntu-latest
     steps:
