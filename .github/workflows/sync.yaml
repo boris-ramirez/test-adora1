@@ -58,7 +58,7 @@ jobs:
           }' > .eslintrc.json
 
       - name: Run ESLint
-        run: eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern "node_modules/*"
+        run: eslint . --ignore-pattern "node_modules/*"
 
   htmlproofer:
     runs-on: ubuntu-latest
