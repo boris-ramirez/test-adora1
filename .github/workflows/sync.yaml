@@ -28,19 +28,20 @@ jobs:
       - name: Prettify code
         run: prettier --write "**/*.{js,jsx,ts,tsx,md}"
 
-  eslint:
-    name: runner / eslint
+eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "20"
-      - run: yarn install
-      - uses: reviewdog/action-eslint@v1
+          node-version: 16
+      - run: npm ci # or yarn install
+      - uses: sibiraj-s/action-eslint@v3
         with:
-          reporter: github-check
-          eslint_flags: "src/"
+          token: ${{ secrets.GITHUB_TOKEN }} # optional
+          eslint-args: '--ignore-path=.gitignore --quiet'
+          extensions: 'js,jsx,ts,tsx'
+          annotations: true
 
   htmlproofer:
     runs-on: ubuntu-latest
