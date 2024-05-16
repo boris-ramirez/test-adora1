@@ -22,11 +22,14 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Install Prettier globally
+      - name: Install ESLint globally
         run: npm install -g eslint
 
+      - name: Install ESLint dependencies
+        run: npm install globals @eslint/js --save-dev
+
       - name: eslint code
-        run: eslint **/*.js --debug
+        run: eslint "**/*.js" --debug
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
