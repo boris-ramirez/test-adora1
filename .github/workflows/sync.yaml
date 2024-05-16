@@ -31,7 +31,7 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -57,10 +57,10 @@ jobs:
       - name: Verify ESLint configuration file
         run: cat .eslintrc.json
 
-      - name: Install ESLint globally
+      - name: Install ESLint
         run: npm install -g eslint
 
-      - name: Install dependencies
+      - name: Install project dependencies
         run: npm install
 
       - name: Run ESLint
