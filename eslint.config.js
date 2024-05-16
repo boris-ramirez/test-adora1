@@ -1,8 +1,8 @@
-module.exports = {
-  overrides: {
-    files: ["*.js"],
+module.exports = [
+  {
     rules: {
-      semi: "error",
+      "no-unused-vars": "error",
+      "no-undef": "error",
     },
   },
-};
+];
