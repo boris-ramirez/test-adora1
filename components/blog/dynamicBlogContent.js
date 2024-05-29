@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function fileUpload(file) {
     fetch(file)
       .then((response) => {
-        if (!response.ok)
+        if (!response.ok) {
           throw new Error("Network response was not ok " + response.statusText);
+        }
         return response.text();
       })
       .then((text) => {
         document.getElementById("blog-content").innerHTML =
           window.convertMarkdown(text);
-        text;
         loadThumbnails();
       })
       .catch((error) => console.error("Error loading mdToHTML file:", error));

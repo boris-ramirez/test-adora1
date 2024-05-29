@@ -414,546 +414,634 @@ const speakersInfo = [
     img: "./assets/cop26_assets/Joachim.png",
   },
 ];
-
 function Util() {}
 
-if (
-  ((function () {
-    const e = document.getElementById("speakers");
-    let t = "",
-      n = 0;
-    for (const e of speakersInfo)
-      (t += `\n\t\t\t<div class="large-4 medium-6 small-12 cell speakers__info">\n\t\t\t\t<div class="grid-x">\n\t\t\t\t\t<div class="large-4 medium-4 small-4 cell">\n\t\t\t\t\t\t<div class="speakers__info__img">\n\t\t\t\t\t\t\t<img src="${e.img}" alt="" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="large-8 medium-8 small-8 cell speakers__info__data">\n\t\t\t\t\t\t<div class="speakers__info__data_tag">\n\t\t\t\t\t\t\t${e.tag}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="speakers__info__data_presentation">\n\t\t\t\t\t\t\t${e.presentation}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="speakers__info__data_name">\n\t\t\t\t\t\t\t${e.name}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="speakers__info__data_anchor">\n\t\t\t\t\t\t\t<a onclick="showPresenterInfo(${n})">View More</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t`),
-        n++;
-    e.innerHTML = t;
-  })(),
-  (Util.hasClass = function (e, t) {
-    return e.classList
-      ? e.classList.contains(t)
-      : !!e.className.match(new RegExp("(\\s|^)" + t + "(\\s|$)"));
-  }),
-  (Util.addClass = function (e, t) {
-    var n = t.split(" ");
-    e.classList
-      ? e.classList.add(n[0])
-      : Util.hasClass(e, n[0]) || (e.className += " " + n[0]),
-      n.length > 1 && Util.addClass(e, n.slice(1).join(" "));
-  }),
-  (Util.removeClass = function (e, t) {
-    var n = t.split(" ");
-    if (e.classList) e.classList.remove(n[0]);
-    else if (Util.hasClass(e, n[0])) {
-      var a = new RegExp("(\\s|^)" + n[0] + "(\\s|$)");
-      e.className = e.className.replace(a, " ");
+document.addEventListener("DOMContentLoaded", () => {
+  const e = document.getElementById("speakers");
+  let t = "";
+  let n = 0;
+  for (const e of speakersInfo) {
+    t += `
+      <div class="large-4 medium-6 small-12 cell speakers__info">
+        <div class="grid-x">
+          <div class="large-4 medium-4 small-4 cell">
+            <div class="speakers__info__img">
+              <img src="${e.img}" alt="" />
+            </div>
+          </div>
+          <div class="large-8 medium-8 small-8 cell speakers__info__data">
+            <div class="speakers__info__data_tag">
+              ${e.tag}
+            </div>
+            <div class="speakers__info__data_presentation">
+              ${e.presentation}
+            </div>
+            <div class="speakers__info__data_name">
+              ${e.name}
+            </div>
+            <div class="speakers__info__data_anchor">
+              <a onclick="showPresenterInfo(${n})">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    n++;
+  }
+  e.innerHTML = t;
+});
+
+Util.hasClass = function (e, t) {
+  return e.classList
+    ? e.classList.contains(t)
+    : !!e.className.match(new RegExp("(\\s|^)" + t + "(\\s|$)"));
+};
+
+Util.addClass = function (e, t) {
+  const n = t.split(" ");
+  if (e.classList) {
+    e.classList.add(n[0]);
+  } else {
+    if (!Util.hasClass(e, n[0])) {
+      e.className += " " + n[0];
     }
-    n.length > 1 && Util.removeClass(e, n.slice(1).join(" "));
-  }),
-  (Util.toggleClass = function (e, t, n) {
-    n ? Util.addClass(e, t) : Util.removeClass(e, t);
-  }),
-  (Util.setAttributes = function (e, t) {
-    for (var n in t) e.setAttribute(n, t[n]);
-  }),
-  (Util.getChildrenByClassName = function (e, t) {
-    e.children;
-    for (var n = [], a = 0; a < e.children.length; a++)
-      Util.hasClass(e.children[a], t) && n.push(e.children[a]);
-    return n;
-  }),
-  (Util.setHeight = function (e, t, n, a, i) {
-    var o = t - e,
-      s = null,
-      r = function (t) {
-        s || (s = t);
-        var l = t - s,
-          d = parseInt((l / a) * o + e);
-        n.setAttribute("style", "height:" + d + "px;"),
-          l < a ? window.requestAnimationFrame(r) : i();
-      };
-    n.setAttribute("style", "height:" + e + "px;"),
+  }
+  if (n.length > 1) {
+    Util.addClass(e, n.slice(1).join(" "));
+  }
+};
+
+Util.removeClass = function (e, t) {
+  const n = t.split(" ");
+  if (e.classList) {
+    e.classList.remove(n[0]);
+  } else if (Util.hasClass(e, n[0])) {
+    const a = new RegExp("(\\s|^)" + n[0] + "(\\s|$)");
+    e.className = e.className.replace(a, " ");
+  }
+  if (n.length > 1) {
+    Util.removeClass(e, n.slice(1).join(" "));
+  }
+};
+
+Util.toggleClass = function (e, t, n) {
+  if (n) {
+    Util.addClass(e, t);
+  } else {
+    Util.removeClass(e, t);
+  }
+};
+
+Util.setAttributes = function (e, t) {
+  for (const n in t) {
+    e.setAttribute(n, t[n]);
+  }
+};
+
+Util.getChildrenByClassName = function (e, t) {
+  const children = e.children;
+  const n = [];
+  for (let a = 0; a < e.children.length; a++) {
+    if (Util.hasClass(e.children[a], t)) {
+      n.push(e.children[a]);
+    }
+  }
+  return n;
+};
+
+Util.setHeight = function (e, t, n, a, i) {
+  const o = t - e;
+  let s = null;
+  const r = function (t) {
+    if (!s) s = t;
+    const l = t - s;
+    const d = parseInt((l / a) * o + e);
+    n.setAttribute("style", "height:" + d + "px;");
+    if (l < a) {
       window.requestAnimationFrame(r);
-  }),
-  (Util.scrollTo = function (e, t, n) {
-    var a = window.scrollY || document.documentElement.scrollTop,
-      i = null,
-      o = function (s) {
-        i || (i = s);
-        var r = s - i;
-        r > t && (r = t);
-        var l = Math.easeInOutQuad(r, a, e - a, t);
-        window.scrollTo(0, l),
-          r < t ? window.requestAnimationFrame(o) : n && n();
-      };
-    window.requestAnimationFrame(o);
-  }),
-  (Util.moveFocus = function (e) {
-    e || (e = document.getElementsByTagName("body")[0]),
-      e.focus(),
-      document.activeElement !== e &&
-        (e.setAttribute("tabindex", "-1"), e.focus());
-  }),
-  (Util.getIndexInArray = function (e, t) {
-    return Array.prototype.indexOf.call(e, t);
-  }),
-  (Util.cssSupports = function (e, t) {
-    return "CSS" in window
-      ? CSS.supports(e, t)
-      : e.replace(/-([a-z])/g, function (e) {
-          return e[1].toUpperCase();
-        }) in document.body.style;
-  }),
+    } else {
+      i();
+    }
+  };
+  n.setAttribute("style", "height:" + e + "px;");
+  window.requestAnimationFrame(r);
+};
+
+Util.scrollTo = function (e, t, n) {
+  const a = window.scrollY || document.documentElement.scrollTop;
+  let i = null;
+  const o = function (s) {
+    if (!i) i = s;
+    let r = s - i;
+    if (r > t) r = t;
+    const l = Math.easeInOutQuad(r, a, e - a, t);
+    window.scrollTo(0, l);
+    if (r < t) {
+      window.requestAnimationFrame(o);
+    } else if (n) {
+      n();
+    }
+  };
+  window.requestAnimationFrame(o);
+};
+
+Util.moveFocus = function (e) {
+  if (!e) e = document.getElementsByTagName("body")[0];
+  e.focus();
+  if (document.activeElement !== e) {
+    e.setAttribute("tabindex", "-1");
+    e.focus();
+  }
+};
+
+Util.getIndexInArray = function (e, t) {
+  return Array.prototype.indexOf.call(e, t);
+};
+
+Util.cssSupports = function (e, t) {
+  return "CSS" in window
+    ? CSS.supports(e, t)
+    : e.replace(/-([a-z])/g, function (e) {
+        return e[1].toUpperCase();
+      }) in document.body.style;
+};
+
+Element.prototype.matches =
   Element.prototype.matches ||
-    (Element.prototype.matches =
-      Element.prototype.msMatchesSelector ||
-      Element.prototype.webkitMatchesSelector),
+  Element.prototype.msMatchesSelector ||
+  Element.prototype.webkitMatchesSelector;
+
+Element.prototype.closest =
   Element.prototype.closest ||
-    (Element.prototype.closest = function (e) {
-      var t = this;
-      if (!document.documentElement.contains(t)) return null;
-      do {
-        if (t.matches(e)) return t;
-        t = t.parentElement || t.parentNode;
-      } while (null !== t && 1 === t.nodeType);
-      return null;
-    }),
-  "function" != typeof window.CustomEvent)
-) {
+  function (e) {
+    let t = this;
+    if (!document.documentElement.contains(t)) return null;
+    do {
+      if (t.matches(e)) return t;
+      t = t.parentElement || t.parentNode;
+    } while (t !== null && t.nodeType === 1);
+    return null;
+  };
+
+if (typeof window.CustomEvent !== "function") {
   function CustomEvent(e, t) {
-    t = t || { bubbles: !1, cancelable: !1, detail: void 0 };
-    var n = document.createEvent("CustomEvent");
-    return n.initCustomEvent(e, t.bubbles, t.cancelable, t.detail), n;
+    t = t || { bubbles: false, cancelable: false, detail: undefined };
+    const n = document.createEvent("CustomEvent");
+    n.initCustomEvent(e, t.bubbles, t.cancelable, t.detail);
+    return n;
   }
 
-  (CustomEvent.prototype = window.Event.prototype),
-    (window.CustomEvent = CustomEvent);
+  CustomEvent.prototype = window.Event.prototype;
+  window.CustomEvent = CustomEvent;
 }
-(Math.easeInOutQuad = function (e, t, n, a) {
+
+Math.easeInOutQuad = function (e, t, n, a) {
   return (e /= a / 2) < 1
     ? (n / 2) * e * e + t
     : (-n / 2) * (--e * (e - 2) - 1) + t;
-}),
-  (function () {
-    function e(e) {
-      (this.element = e),
-        (this.timelineItems = this.element
-          .getElementsByClassName("cd-schedule__timeline")[0]
-          .getElementsByTagName("li")),
-        (this.timelineStart = t(this.timelineItems[0].textContent)),
-        (this.timelineUnitDuration =
-          t(this.timelineItems[1].textContent) -
-          t(this.timelineItems[0].textContent)),
-        (this.topInfoElement = this.element.getElementsByClassName(
-          "cd-schedule__top-info"
-        )[0]),
-        (this.singleEvents =
-          this.element.getElementsByClassName("cd-schedule__event")),
-        (this.modal =
-          this.element.getElementsByClassName("cd-schedule-modal")[0]),
-        (this.modalHeader = this.element.getElementsByClassName(
-          "cd-schedule-modal__header"
-        )[0]),
-        (this.modalHeaderBg = this.element.getElementsByClassName(
-          "cd-schedule-modal__header-bg"
-        )[0]),
-        (this.modalBody = this.element.getElementsByClassName(
-          "cd-schedule-modal__body"
-        )[0]),
-        (this.modalBodyBg = this.element.getElementsByClassName(
-          "cd-schedule-modal__body-bg"
-        )[0]),
-        (this.modalClose = this.modal.getElementsByClassName(
-          "cd-schedule-modal__close"
-        )[0]),
-        (this.modalDate = this.modal.getElementsByClassName(
-          "cd-schedule-modal__date"
-        )[0]),
-        (this.modalEventName = this.modal.getElementsByClassName(
-          "cd-schedule-modal__name"
-        )[0]),
-        (this.coverLayer = this.element.getElementsByClassName(
-          "cd-schedule__cover-layer"
-        )[0]),
-        (this.modalMaxWidth = 800),
-        (this.modalMaxHeight = 480),
-        (this.animating = !1),
-        (this.supportAnimation = Util.cssSupports("transition")),
-        this.initSchedule();
-    }
+};
 
-    function t(e) {
-      var t = (e = e.replace(/ /g, "")).split(":");
-      return 60 * parseInt(t[0]) + parseInt(t[1]);
-    }
+(function () {
+  function e(e) {
+    this.element = e;
+    this.timelineItems = this.element
+      .getElementsByClassName("cd-schedule__timeline")[0]
+      .getElementsByTagName("li");
+    this.timelineStart = t(this.timelineItems[0].textContent);
+    this.timelineUnitDuration =
+      t(this.timelineItems[1].textContent) -
+      t(this.timelineItems[0].textContent);
+    this.topInfoElement = this.element.getElementsByClassName(
+      "cd-schedule__top-info"
+    )[0];
+    this.singleEvents =
+      this.element.getElementsByClassName("cd-schedule__event");
+    this.modal = this.element.getElementsByClassName("cd-schedule-modal")[0];
+    this.modalHeader = this.element.getElementsByClassName(
+      "cd-schedule-modal__header"
+    )[0];
+    this.modalHeaderBg = this.element.getElementsByClassName(
+      "cd-schedule-modal__header-bg"
+    )[0];
+    this.modalBody = this.element.getElementsByClassName(
+      "cd-schedule-modal__body"
+    )[0];
+    this.modalBodyBg = this.element.getElementsByClassName(
+      "cd-schedule-modal__body-bg"
+    )[0];
+    this.modalClose = this.modal.getElementsByClassName(
+      "cd-schedule-modal__close"
+    )[0];
+    this.modalDate = this.modal.getElementsByClassName(
+      "cd-schedule-modal__date"
+    )[0];
+    this.modalEventName = this.modal.getElementsByClassName(
+      "cd-schedule-modal__name"
+    )[0];
+    this.coverLayer = this.element.getElementsByClassName(
+      "cd-schedule__cover-layer"
+    )[0];
+    this.modalMaxWidth = 800;
+    this.modalMaxHeight = 480;
+    this.animating = false;
+    this.supportAnimation = Util.cssSupports("transition");
+    this.initSchedule();
+  }
 
-    (e.prototype.initSchedule = function () {
-      this.scheduleReset(), this.initEvents();
-    }),
-      (e.prototype.scheduleReset = function () {
-        var e = this.mq(),
-          t = Util.hasClass(this.element, "js-schedule-loaded"),
-          n = Util.hasClass(this.modal, "cd-schedule-modal--open");
-        "desktop" != e || t
-          ? "mobile" == e && t
-            ? (Util.removeClass(
-                this.element,
-                "cd-schedule--loading js-schedule-loaded"
-              ),
-              this.resetEventsStyle(),
-              n && this.checkEventModal())
-            : "desktop" == e && n
-            ? (this.checkEventModal(n),
-              Util.removeClass(this.element, "cd-schedule--loading"))
-            : Util.removeClass(this.element, "cd-schedule--loading")
-          : (Util.addClass(this.element, "js-schedule-loaded"),
-            this.placeEvents(),
-            n && this.checkEventModal(n));
-      }),
-      (e.prototype.resetEventsStyle = function () {
-        for (var e = 0; e < this.singleEvents.length; e++)
-          this.singleEvents[e].removeAttribute("style");
-      }),
-      (e.prototype.placeEvents = function () {
-        for (
-          var e = this.topInfoElement.offsetHeight, n = 0;
-          n < this.singleEvents.length;
-          n++
-        ) {
-          var a = this.singleEvents[n].getElementsByTagName("a")[0],
-            i = t(a.getAttribute("data-start")),
-            o = t(a.getAttribute("data-end")) - i,
-            s = (e * (i - this.timelineStart)) / this.timelineUnitDuration,
-            r = (e * o) / this.timelineUnitDuration;
-          this.singleEvents[n].setAttribute(
-            "style",
-            "top: " + (s - 1) + "px; height: " + (r + 1) + "px"
-          );
-        }
-        Util.removeClass(this.element, "cd-schedule--loading");
-      }),
-      (e.prototype.initEvents = function () {
-        for (var e = this, t = 0; t < this.singleEvents.length; t++)
-          this.singleEvents[t].addEventListener("click", function (t) {
-            t.preventDefault(),
-              e.animating || e.openModal(this.getElementsByTagName("a")[0]);
-          });
-        this.modalClose.addEventListener("click", function (t) {
-          t.preventDefault(), e.animating || e.closeModal();
-        }),
-          this.coverLayer.addEventListener("click", function (t) {
-            t.preventDefault(), e.animating || e.closeModal();
-          });
-      }),
-      (e.prototype.openModal = function (e) {
-        var t = this;
-        document.body.classList.add("stop-scrolling");
-        var n = t.mq();
-        if (
-          ((this.animating = !0),
-          (this.modalEventName.textContent =
-            e.getElementsByTagName("em")[0].textContent),
-          (this.modalDate.textContent =
-            e.getAttribute("data-start") + " - " + e.getAttribute("data-end")),
-          this.modal.setAttribute("data-event", e.getAttribute("data-event")),
-          this.loadEventContent(e.getAttribute("data-content")),
-          Util.addClass(this.modal, "cd-schedule-modal--open"),
-          setTimeout(function () {
-            Util.addClass(e.closest("li"), "cd-schedule__event--selected");
-          }, 10),
-          "mobile" == n)
-        )
-          t.modal.addEventListener("transitionend", function e() {
-            (t.animating = !1), t.modal.removeEventListener("transitionend", e);
-          });
-        else {
-          var a = e.getBoundingClientRect(),
-            i = a.top,
-            o = a.left,
-            s = e.offsetHeight,
-            r = e.offsetWidth,
-            l = window.innerWidth,
-            d = window.innerHeight,
-            c = 0.8 * l > t.modalMaxWidth ? t.modalMaxWidth : 0.8 * l,
-            h = 0.8 * d > t.modalMaxHeight ? t.modalMaxHeight : 0.8 * d,
-            m = parseInt((l - c) / 2 - o),
-            u = parseInt((d - h) / 2 - i),
-            g = h / s,
-            p = c - r;
-          t.modal.setAttribute(
-            "style",
-            "top:" +
-              i +
-              "px;left:" +
-              o +
-              "px;height:" +
-              h +
-              "px;width:" +
-              c +
-              "px;transform: translateY(" +
-              u +
-              "px) translateX(" +
-              m +
-              "px)"
-          ),
-            t.modalHeader.setAttribute("style", "width:" + r + "px"),
-            t.modalBody.setAttribute("style", "margin-left:" + r + "px"),
-            t.modalBodyBg.setAttribute(
-              "style",
-              "height:" +
-                s +
-                "px; width: 1px; transform: scaleY(" +
-                g +
-                ") scaleX(" +
-                p +
-                ")"
-            ),
-            t.modalHeaderBg.setAttribute(
-              "style",
-              "height: " +
-                s +
-                "px; width: " +
-                r +
-                "px; transform: scaleY(" +
-                g +
-                ")"
-            ),
-            t.modalHeaderBg.addEventListener("transitionend", function e() {
-              (t.animating = !1),
-                Util.addClass(
-                  t.modal,
-                  "cd-schedule-modal--animation-completed"
-                ),
-                t.modalHeaderBg.removeEventListener("transitionend", e);
-            });
-        }
-        this.animationFallback();
-      }),
-      (e.prototype.closeModal = function () {
-        var e = this;
-        document.body.classList.remove("stop-scrolling");
-        var t = e.mq(),
-          n = e.element.getElementsByClassName(
-            "cd-schedule__event--selected"
-          )[0],
-          a = n.getElementsByTagName("a")[0];
-        if (((this.animating = !0), "mobile" == t))
-          Util.removeClass(this.modal, "cd-schedule-modal--open"),
-            e.modal.addEventListener("transitionend", function t() {
-              Util.removeClass(e.modal, "cd-schedule-modal--content-loaded"),
-                Util.removeClass(n, "cd-schedule__event--selected"),
-                (e.animating = !1),
-                e.modal.removeEventListener("transitionend", t);
-            });
-        else {
-          var i = a.getBoundingClientRect(),
-            o = i.top,
-            s = i.left,
-            r = a.offsetHeight,
-            l = a.offsetWidth,
-            d = window.getComputedStyle(e.modal),
-            c = Number(d.getPropertyValue("top").replace("px", "")),
-            h = s - Number(d.getPropertyValue("left").replace("px", "")),
-            m = o - c;
-          Util.removeClass(
-            this.modal,
-            "cd-schedule-modal--open cd-schedule-modal--animation-completed"
-          ),
-            (e.modal.style.width = l + "px"),
-            (e.modal.style.height = r + "px"),
-            (e.modal.style.transform =
-              "translateX(" + h + "px) translateY(" + m + "px)"),
-            (e.modalBodyBg.style.transform = "scaleX(0) scaleY(1)"),
-            (e.modalHeaderBg.style.transform = "scaleY(1)"),
-            e.modalHeaderBg.addEventListener("transitionend", function t() {
-              Util.addClass(e.modal, "cd-schedule-modal--no-transition"),
-                setTimeout(function () {
-                  e.modal.removeAttribute("style"),
-                    e.modalBody.removeAttribute("style"),
-                    e.modalHeader.removeAttribute("style"),
-                    e.modalHeaderBg.removeAttribute("style"),
-                    e.modalBodyBg.removeAttribute("style");
-                }, 10),
-                setTimeout(function () {
-                  Util.removeClass(e.modal, "cd-schedule-modal--no-transition");
-                }, 20),
-                (e.animating = !1),
-                Util.removeClass(e.modal, "cd-schedule-modal--content-loaded"),
-                Util.removeClass(n, "cd-schedule__event--selected"),
-                e.modalHeaderBg.removeEventListener("transitionend", t);
-            });
-        }
-        this.animationFallback();
-      }),
-      (e.prototype.checkEventModal = function (e) {
-        this.animating = !0;
-        var t = this,
-          n = this.mq();
-        if ("mobile" == n)
-          t.modal.removeAttribute("style"),
-            t.modalBody.removeAttribute("style"),
-            t.modalHeader.removeAttribute("style"),
-            t.modalHeaderBg.removeAttribute("style"),
-            t.modalBodyBg.removeAttribute("style"),
-            Util.removeClass(t.modal, "cd-schedule-modal--no-transition"),
-            (t.animating = !1);
-        else if ("desktop" == n && e) {
-          Util.addClass(
-            t.modal,
-            "cd-schedule-modal--no-transition cd-schedule-modal--animation-completed"
-          );
-          var a = t.element
-              .getElementsByClassName("cd-schedule__event--selected")[0]
-              .getElementsByTagName("a")[0],
-            i = a.getBoundingClientRect(),
-            o = (i.top, i.left, a.offsetHeight),
-            s = a.offsetWidth,
-            r = window.innerWidth,
-            l = window.innerHeight,
-            d = 0.8 * r > t.modalMaxWidth ? t.modalMaxWidth : 0.8 * r,
-            c = 0.8 * l > t.modalMaxHeight ? t.modalMaxHeight : 0.8 * l,
-            h = c / o,
-            m = d - s;
-          setTimeout(function () {
-            t.modal.setAttribute(
-              "style",
-              "top:" +
-                (l / 2 - c / 2) +
-                "px;left:" +
-                (r / 2 - d / 2) +
-                "px;height:" +
-                c +
-                "px;width:" +
-                d +
-                "px;transform: translateY(0) translateX(0)"
-            ),
-              (t.modalBodyBg.style.height = c + "px"),
-              (t.modalBodyBg.style.transform = "scaleY(1) scaleX(" + m + ")"),
-              (t.modalBodyBg.style.width = "1px"),
-              t.modalHeader.setAttribute("style", "width:" + s + "px"),
-              t.modalBody.setAttribute("style", "margin-left:" + s + "px"),
-              t.modalHeaderBg.setAttribute(
-                "style",
-                "height: " +
-                  o +
-                  "px;width:" +
-                  s +
-                  "px; transform:scaleY(" +
-                  h +
-                  ");"
-              );
-          }, 10),
-            setTimeout(function () {
-              Util.removeClass(t.modal, "cd-schedule-modal--no-transition"),
-                (t.animating = !1);
-            }, 20);
-        }
-      }),
-      (e.prototype.loadEventContent = function (e) {
-        const t = `\n\t\t\t<div class="schedule_info">\n\t\t\t\t<h4>${
-          scheduleInfo[e].title
-        }</h4>\n\t\t\t\t<h6><i class="fas fa-calendar-day"></i> ${
-          scheduleInfo[e].date
-        }</h6>\n\t\t\t\t<p>${scheduleInfo[e].url}</p><p>${
-          scheduleInfo[e].description
-        }</p>\n\t\t\t\t<h4><i class="fas fa-user-tie"></i> Moderator</h4>\n\t\t\t\t<p>${
-          scheduleInfo[e].moderator
-        }</p>\n\t\t\t\t<h4><i class="fas fa-users"></i> Panelists</h4>\n\t\t\t\t${scheduleInfo[
-          e
-        ].panelists
-          .map((e) => "<h6>" + e.title + "</h6><p>" + e.panelist + "</p>")
-          .join("")}\n\t\t\t</div>\n\t\t`;
-        (this.modal.getElementsByClassName(
-          "cd-schedule-modal__event-info"
-        )[0].innerHTML = t),
-          Util.addClass(this.modal, "cd-schedule-modal--content-loaded");
-      }),
-      (e.prototype.getEventContent = function (e) {
-        var t = document.createElement("div");
-        return (
-          (t.innerHTML = e.trim()),
-          t.getElementsByClassName("cd-schedule-modal__event-info")[0].innerHTML
+  function t(e) {
+    const t = (e = e.replace(/ /g, "")).split(":");
+    return 60 * parseInt(t[0]) + parseInt(t[1]);
+  }
+
+  e.prototype.initSchedule = function () {
+    this.scheduleReset();
+    this.initEvents();
+  };
+
+  e.prototype.scheduleReset = function () {
+    const e = this.mq();
+    const t = Util.hasClass(this.element, "js-schedule-loaded");
+    const n = Util.hasClass(this.modal, "cd-schedule-modal--open");
+    if (e !== "desktop" || t) {
+      if (e === "mobile" && t) {
+        Util.removeClass(
+          this.element,
+          "cd-schedule--loading js-schedule-loaded"
         );
-      }),
-      (e.prototype.animationFallback = function () {
-        if (!this.supportAnimation) {
-          var e = new CustomEvent("transitionend");
-          self.modal.dispatchEvent(e), self.modalHeaderBg.dispatchEvent(e);
-        }
-      }),
-      (e.prototype.mq = function () {
-        return window
-          .getComputedStyle(this.element, "::before")
-          .getPropertyValue("content")
-          .replace(/'|"/g, "");
-      });
-    var n = document.getElementsByClassName("js-cd-schedule"),
-      a = [],
-      i = !1;
-    if (n.length > 0) {
-      for (var o = 0; o < n.length; o++)
-        !(function (t) {
-          a.push(new e(n[t]));
-        })(o);
-
-      function s() {
-        for (var e = 0; e < a.length; e++) a[e].scheduleReset();
-        i = !1;
+        this.resetEventsStyle();
+        if (n) this.checkEventModal();
+      } else if (e === "desktop" && n) {
+        this.checkEventModal(n);
+        Util.removeClass(this.element, "cd-schedule--loading");
+      } else {
+        Util.removeClass(this.element, "cd-schedule--loading");
       }
-
-      window.addEventListener("resize", function (e) {
-        i ||
-          ((i = !0),
-          window.requestAnimationFrame
-            ? window.requestAnimationFrame(s)
-            : setTimeout(s, 250));
-      }),
-        window.addEventListener("keyup", function (e) {
-          if (
-            (e.keyCode && 27 == e.keyCode) ||
-            (e.key && "escape" == e.key.toLowerCase())
-          )
-            for (var t = 0; t < a.length; t++) a[t].closeModal();
-        });
+    } else {
+      Util.addClass(this.element, "js-schedule-loaded");
+      this.placeEvents();
+      if (n) this.checkEventModal(n);
     }
-  })();
-const modal = document.getElementById("presenter-modal"),
-  modalContent = document.getElementById("presenter-modal-content"),
-  closeModal = document.getElementsByClassName("close-modal-speakers")[0],
-  modalHtml = document.getElementById("presenter-modal-html");
+  };
+
+  e.prototype.resetEventsStyle = function () {
+    for (let e = 0; e < this.singleEvents.length; e++) {
+      this.singleEvents[e].removeAttribute("style");
+    }
+  };
+
+  e.prototype.placeEvents = function () {
+    const e = this.topInfoElement.offsetHeight;
+    for (let n = 0; n < this.singleEvents.length; n++) {
+      const a = this.singleEvents[n].getElementsByTagName("a")[0];
+      const i = t(a.getAttribute("data-start"));
+      const o = t(a.getAttribute("data-end")) - i;
+      const s = (e * (i - this.timelineStart)) / this.timelineUnitDuration;
+      const r = (e * o) / this.timelineUnitDuration;
+      this.singleEvents[n].setAttribute(
+        "style",
+        "top: " + (s - 1) + "px; height: " + (r + 1) + "px"
+      );
+    }
+    Util.removeClass(this.element, "cd-schedule--loading");
+  };
+
+  e.prototype.initEvents = function () {
+    const e = this;
+    for (let t = 0; t < this.singleEvents.length; t++) {
+      this.singleEvents[t].addEventListener("click", function (t) {
+        t.preventDefault();
+        if (!e.animating) e.openModal(this.getElementsByTagName("a")[0]);
+      });
+    }
+    this.modalClose.addEventListener("click", function (t) {
+      t.preventDefault();
+      if (!e.animating) e.closeModal();
+    });
+    this.coverLayer.addEventListener("click", function (t) {
+      t.preventDefault();
+      if (!e.animating) e.closeModal();
+    });
+  };
+
+  e.prototype.openModal = function (e) {
+    const t = this;
+    document.body.classList.add("stop-scrolling");
+    const n = t.mq();
+    this.animating = true;
+    this.modalEventName.textContent =
+      e.getElementsByTagName("em")[0].textContent;
+    this.modalDate.textContent =
+      e.getAttribute("data-start") + " - " + e.getAttribute("data-end");
+    this.modal.setAttribute("data-event", e.getAttribute("data-event"));
+    this.loadEventContent(e.getAttribute("data-content"));
+    Util.addClass(this.modal, "cd-schedule-modal--open");
+    setTimeout(() => {
+      Util.addClass(e.closest("li"), "cd-schedule__event--selected");
+    }, 10);
+    if (n === "mobile") {
+      t.modal.addEventListener("transitionend", function e() {
+        t.animating = false;
+        t.modal.removeEventListener("transitionend", e);
+      });
+    } else {
+      const a = e.getBoundingClientRect();
+      const i = a.top;
+      const o = a.left;
+      const s = e.offsetHeight;
+      const r = e.offsetWidth;
+      const l = window.innerWidth;
+      const d = window.innerHeight;
+      const c = 0.8 * l > t.modalMaxWidth ? t.modalMaxWidth : 0.8 * l;
+      const h = 0.8 * d > t.modalMaxHeight ? t.modalMaxHeight : 0.8 * d;
+      const m = parseInt((l - c) / 2 - o);
+      const u = parseInt((d - h) / 2 - i);
+      const g = h / s;
+      const p = c - r;
+      t.modal.setAttribute(
+        "style",
+        "top:" +
+          i +
+          "px;left:" +
+          o +
+          "px;height:" +
+          h +
+          "px;width:" +
+          c +
+          "px;transform: translateY(" +
+          u +
+          "px) translateX(" +
+          m +
+          "px)"
+      );
+      t.modalHeader.setAttribute("style", "width:" + r + "px");
+      t.modalBody.setAttribute("style", "margin-left:" + r + "px");
+      t.modalBodyBg.setAttribute(
+        "style",
+        "height:" +
+          s +
+          "px; width: 1px; transform: scaleY(" +
+          g +
+          ") scaleX(" +
+          p +
+          ")"
+      );
+      t.modalHeaderBg.setAttribute(
+        "style",
+        "height: " + s + "px; width: " + r + "px; transform: scaleY(" + g + ")"
+      );
+      t.modalHeaderBg.addEventListener("transitionend", function e() {
+        t.animating = false;
+        Util.addClass(t.modal, "cd-schedule-modal--animation-completed");
+        t.modalHeaderBg.removeEventListener("transitionend", e);
+      });
+    }
+    this.animationFallback();
+  };
+
+  e.prototype.closeModal = function () {
+    const e = this;
+    document.body.classList.remove("stop-scrolling");
+    const t = e.mq();
+    const n = e.element.getElementsByClassName(
+      "cd-schedule__event--selected"
+    )[0];
+    const a = n.getElementsByTagName("a")[0];
+    e.animating = true;
+    if (t === "mobile") {
+      Util.removeClass(this.modal, "cd-schedule-modal--open");
+      e.modal.addEventListener("transitionend", function t() {
+        Util.removeClass(e.modal, "cd-schedule-modal--content-loaded");
+        Util.removeClass(n, "cd-schedule__event--selected");
+        e.animating = false;
+        e.modal.removeEventListener("transitionend", t);
+      });
+    } else {
+      const i = a.getBoundingClientRect();
+      const o = i.top;
+      const s = i.left;
+      const r = a.offsetHeight;
+      const l = a.offsetWidth;
+      const d = window.getComputedStyle(e.modal);
+      const c = Number(d.getPropertyValue("top").replace("px", ""));
+      const h = s - Number(d.getPropertyValue("left").replace("px", ""));
+      const m = o - c;
+      Util.removeClass(
+        this.modal,
+        "cd-schedule-modal--open cd-schedule-modal--animation-completed"
+      );
+      e.modal.style.width = l + "px";
+      e.modal.style.height = r + "px";
+      e.modal.style.transform =
+        "translateX(" + h + "px) translateY(" + m + "px)";
+      e.modalBodyBg.style.transform = "scaleX(0) scaleY(1)";
+      e.modalHeaderBg.style.transform = "scaleY(1)";
+      e.modalHeaderBg.addEventListener("transitionend", function t() {
+        Util.addClass(e.modal, "cd-schedule-modal--no-transition");
+        setTimeout(() => {
+          e.modal.removeAttribute("style");
+          e.modalBody.removeAttribute("style");
+          e.modalHeader.removeAttribute("style");
+          e.modalHeaderBg.removeAttribute("style");
+          e.modalBodyBg.removeAttribute("style");
+        }, 10);
+        setTimeout(() => {
+          Util.removeClass(e.modal, "cd-schedule-modal--no-transition");
+        }, 20);
+        e.animating = false;
+        Util.removeClass(e.modal, "cd-schedule-modal--content-loaded");
+        Util.removeClass(n, "cd-schedule__event--selected");
+        e.modalHeaderBg.removeEventListener("transitionend", t);
+      });
+    }
+    this.animationFallback();
+  };
+
+  e.prototype.checkEventModal = function (e) {
+    this.animating = true;
+    const t = this;
+    const n = this.mq();
+    if (n === "mobile") {
+      t.modal.removeAttribute("style");
+      t.modalBody.removeAttribute("style");
+      t.modalHeader.removeAttribute("style");
+      t.modalHeaderBg.removeAttribute("style");
+      t.modalBodyBg.removeAttribute("style");
+      Util.removeClass(t.modal, "cd-schedule-modal--no-transition");
+      t.animating = false;
+    } else if (n === "desktop" && e) {
+      Util.addClass(
+        t.modal,
+        "cd-schedule-modal--no-transition cd-schedule-modal--animation-completed"
+      );
+      const a = t.element
+        .getElementsByClassName("cd-schedule__event--selected")[0]
+        .getElementsByTagName("a")[0];
+      const i = a.getBoundingClientRect();
+      const o = a.offsetHeight;
+      const s = a.offsetWidth;
+      const r = window.innerWidth;
+      const l = window.innerHeight;
+      const d = 0.8 * r > t.modalMaxWidth ? t.modalMaxWidth : 0.8 * r;
+      const c = 0.8 * l > t.modalMaxHeight ? t.modalMaxHeight : 0.8 * l;
+      const h = c / o;
+      const m = d - s;
+      setTimeout(() => {
+        t.modal.setAttribute(
+          "style",
+          "top:" +
+            (l / 2 - c / 2) +
+            "px;left:" +
+            (r / 2 - d / 2) +
+            "px;height:" +
+            c +
+            "px;width:" +
+            d +
+            "px;transform: translateY(0) translateX(0)"
+        );
+        t.modalBodyBg.style.height = c + "px";
+        t.modalBodyBg.style.transform = "scaleY(1) scaleX(" + m + ")";
+        t.modalBodyBg.style.width = "1px";
+        t.modalHeader.setAttribute("style", "width:" + s + "px");
+        t.modalBody.setAttribute("style", "margin-left:" + s + "px");
+        t.modalHeaderBg.setAttribute(
+          "style",
+          "height: " + o + "px;width:" + s + "px; transform:scaleY(" + h + ");"
+        );
+      }, 10);
+      setTimeout(() => {
+        Util.removeClass(t.modal, "cd-schedule-modal--no-transition");
+        t.animating = false;
+      }, 20);
+    }
+  };
+
+  e.prototype.loadEventContent = function (e) {
+    const t = `
+      <div class="schedule_info">
+        <h4>${scheduleInfo[e].title}</h4>
+        <h6><i class="fas fa-calendar-day"></i> ${scheduleInfo[e].date}</h6>
+        <p>${scheduleInfo[e].url}</p><p>${scheduleInfo[e].description}</p>
+        <h4><i class="fas fa-user-tie"></i> Moderator</h4>
+        <p>${scheduleInfo[e].moderator}</p>
+        <h4><i class="fas fa-users"></i> Panelists</h4>
+        ${scheduleInfo[e].panelists
+          .map((e) => "<h6>" + e.title + "</h6><p>" + e.panelist + "</p>")
+          .join("")}
+      </div>`;
+    this.modal.getElementsByClassName(
+      "cd-schedule-modal__event-info"
+    )[0].innerHTML = t;
+    Util.addClass(this.modal, "cd-schedule-modal--content-loaded");
+  };
+
+  e.prototype.getEventContent = function (e) {
+    const t = document.createElement("div");
+    t.innerHTML = e.trim();
+    return t.getElementsByClassName("cd-schedule-modal__event-info")[0]
+      .innerHTML;
+  };
+
+  e.prototype.animationFallback = function () {
+    if (!this.supportAnimation) {
+      const e = new CustomEvent("transitionend");
+      this.modal.dispatchEvent(e);
+      this.modalHeaderBg.dispatchEvent(e);
+    }
+  };
+
+  e.prototype.mq = function () {
+    return window
+      .getComputedStyle(this.element, "::before")
+      .getPropertyValue("content")
+      .replace(/'|"/g, "");
+  };
+
+  const n = document.getElementsByClassName("js-cd-schedule");
+  const a = [];
+  let i = false;
+  if (n.length > 0) {
+    for (let o = 0; o < n.length; o++) {
+      (function (t) {
+        a.push(new e(n[t]));
+      })(o);
+    }
+
+    function s() {
+      for (let e = 0; e < a.length; e++) {
+        a[e].scheduleReset();
+      }
+      i = false;
+    }
+
+    window.addEventListener("resize", function (e) {
+      if (!i) {
+        i = true;
+        if (window.requestAnimationFrame) {
+          window.requestAnimationFrame(s);
+        } else {
+          setTimeout(s, 250);
+        }
+      }
+    });
+
+    window.addEventListener("keyup", function (e) {
+      if (
+        (e.keyCode && e.keyCode === 27) ||
+        (e.key && e.key.toLowerCase() === "escape")
+      ) {
+        for (let t = 0; t < a.length; t++) {
+          a[t].closeModal();
+        }
+      }
+    });
+  }
+})();
+
+const modal = document.getElementById("presenter-modal");
+const modalContent = document.getElementById("presenter-modal-content");
+const closeModal = document.getElementsByClassName("close-modal-speakers")[0];
+const modalHtml = document.getElementById("presenter-modal-html");
 
 function showPresenterInfo(e) {
-  (modal.style.display = "block"),
-    modalContent.classList.add("fadeInUp"),
-    document.body.classList.add("stop-scrolling");
-  const t = `\n\t\t<div class="speaker-modal-data">\n\t\t\t<div class="speaker-modal-data__img">\n\t\t\t\t<img src="${
-    speakersInfo[e].img || ""
-  }" alt =""/>\n\t\t\t</div>\n\t\t\t<h3>${
-    speakersInfo[e].name || ""
-  }</h3>\n\t\t\t<h6>${speakersInfo[e].tag || ""}</h6>\n\t\t\t<h5>${
-    speakersInfo[e].presentation || ""
-  }</h5>\n\t\t\t<p>${
-    speakersInfo[e].description || ""
-  }</p>\n\t\t\t<h5>Bio</h5>\n\t\t\t<p>${
-    speakersInfo[e].bio || "No bio"
-  }</p><p>${speakersInfo[e].url || ""}</p></div>\n\t`;
+  modal.style.display = "block";
+  modalContent.classList.add("fadeInUp");
+  document.body.classList.add("stop-scrolling");
+  const t = `
+    <div class="speaker-modal-data">
+      <div class="speaker-modal-data__img">
+        <img src="${speakersInfo[e].img || ""}" alt=""/>
+      </div>
+      <h3>${speakersInfo[e].name || ""}</h3>
+      <h6>${speakersInfo[e].tag || ""}</h6>
+      <h5>${speakersInfo[e].presentation || ""}</h5>
+      <p>${speakersInfo[e].description || ""}</p>
+      <h5>Bio</h5>
+      <p>${speakersInfo[e].bio || "No bio"}</p><p>${
+    speakersInfo[e].url || ""
+  }</p>
+    </div>`;
   modalHtml.innerHTML = t;
 }
 
-(closeModal.onclick = function () {
-  (modal.style.display = "none"),
-    modalContent.classList.remove("fadeInUp"),
+closeModal.onclick = function () {
+  modal.style.display = "none";
+  modalContent.classList.remove("fadeInUp");
+  document.body.classList.remove("stop-scrolling");
+};
+
+window.onclick = function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    modalContent.classList.remove("fadeInUp");
     document.body.classList.remove("stop-scrolling");
-}),
-  (window.onclick = function (e) {
-    e.target === modal &&
-      ((modal.style.display = "none"),
-      modalContent.classList.remove("fadeInUp"),
-      document.body.classList.remove("stop-scrolling"));
-  }),
-  (document.onkeydown = function (e) {
-    switch (e.keyCode) {
-      case 27:
-        (modal.style.display = "none"),
-          modalContent.classList.remove("fadeInUp"),
-          document.body.classList.remove("stop-scrolling");
-    }
-  });
+  }
+};
+
+document.onkeydown = function (e) {
+  switch (e.keyCode) {
+    case 27:
+      modal.style.display = "none";
+      modalContent.classList.remove("fadeInUp");
+      document.body.classList.remove("stop-scrolling");
+      break;
+  }
+};
