@@ -32,7 +32,7 @@ jobs:
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --write **/*.{js,md}
-          only_changed: True
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -43,3 +43,7 @@ jobs:
 
       - name: Check HTML
         run: htmlproofer ./ --allow-missing-href
+
+      - name: Show Prettier Changes
+        run: |
+          git diff --color
