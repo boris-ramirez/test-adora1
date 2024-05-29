@@ -579,13 +579,13 @@ Util.cssSupports = function (property, value) {
 };
 
 if (typeof window !== "undefined" && typeof window.Element !== "undefined") {
-  Element.prototype.matches =
-    Element.prototype.matches ||
-    Element.prototype.msMatchesSelector ||
-    Element.prototype.webkitMatchesSelector;
+  window.Element.prototype.matches =
+    window.Element.prototype.matches ||
+    window.Element.prototype.msMatchesSelector ||
+    window.Element.prototype.webkitMatchesSelector;
 
-  Element.prototype.closest =
-    Element.prototype.closest ||
+  window.Element.prototype.closest =
+    window.Element.prototype.closest ||
     function (selector) {
       let el = this;
       while (el && el.nodeType === 1) {
@@ -745,10 +745,20 @@ Math.easeInOutQuad = function (e, t, n, a) {
     });
     this.coverLayer.addEventListener("click", function (t) {
       t.preventDefault();
-      if (!e.animating) e.closeModal();
+      if (!e.animating) {
+        e.closeModal();
+      }
     });
   };
-
+  if (typeof setTimeout === "undefined") {
+    global.setTimeout = function (callback, delay) {
+      var start = Date.now();
+      while (Date.now() - start < delay) {
+        // Esperar
+      }
+      callback();
+    };
+  }
   e.prototype.openModal = function (e) {
     const t = this;
     document.body.classList.add("stop-scrolling");
