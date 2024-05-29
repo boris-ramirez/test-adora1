@@ -43,3 +43,11 @@ jobs:
 
       - name: Check HTML
         run: htmlproofer ./ --allow-missing-href
+
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Prettified Code!"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT }}
