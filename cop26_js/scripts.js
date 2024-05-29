@@ -498,7 +498,6 @@ Util.setAttributes = function (e, t) {
 };
 
 Util.getChildrenByClassName = function (e, t) {
-  const children = e.children;
   const n = [];
   for (let a = 0; a < e.children.length; a++) {
     if (Util.hasClass(e.children[a], t)) {
@@ -557,12 +556,18 @@ Util.getIndexInArray = function (e, t) {
   return Array.prototype.indexOf.call(e, t);
 };
 
-Util.cssSupports = function (e, t) {
-  return "CSS" in window
-    ? CSS.supports(e, t)
-    : e.replace(/-([a-z])/g, function (e) {
-        return e[1].toUpperCase();
-      }) in document.body.style;
+Util.cssSupports = function (property, value) {
+  // Verificar si CSS.supports está disponible
+  if ("CSS" in window && typeof CSS.supports === "function") {
+    return CSS.supports(property, value);
+  } else {
+    // Alternativa si CSS.supports no está disponible
+    return (
+      property.replace(/-([a-z])/g, function (match, letter) {
+        return letter.toUpperCase();
+      }) in document.body.style
+    );
+  }
 };
 
 Element.prototype.matches =
@@ -570,24 +575,34 @@ Element.prototype.matches =
   Element.prototype.msMatchesSelector ||
   Element.prototype.webkitMatchesSelector;
 
-Element.prototype.closest =
-  Element.prototype.closest ||
-  function (e) {
-    let t = this;
-    if (!document.documentElement.contains(t)) return null;
-    do {
-      if (t.matches(e)) return t;
-      t = t.parentElement || t.parentNode;
-    } while (t !== null && t.nodeType === 1);
-    return null;
-  };
+if (typeof Element !== "undefined") {
+  Element.prototype.matches =
+    Element.prototype.matches ||
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.webkitMatchesSelector;
 
+  Element.prototype.closest =
+    Element.prototype.closest ||
+    function (selector) {
+      let el = this;
+      while (el && el.nodeType === 1) {
+        if (el.matches(selector)) return el;
+        el = el.parentElement || el.parentNode;
+      }
+      return null;
+    };
+}
 if (typeof window.CustomEvent !== "function") {
-  function CustomEvent(e, t) {
-    t = t || { bubbles: false, cancelable: false, detail: undefined };
-    const n = document.createEvent("CustomEvent");
-    n.initCustomEvent(e, t.bubbles, t.cancelable, t.detail);
-    return n;
+  function CustomEvent(event, params) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent("CustomEvent");
+    evt.initCustomEvent(
+      event,
+      params.bubbles,
+      params.cancelable,
+      params.detail
+    );
+    return evt;
   }
 
   CustomEvent.prototype = window.Event.prototype;
@@ -668,7 +683,9 @@ Math.easeInOutQuad = function (e, t, n, a) {
           "cd-schedule--loading js-schedule-loaded"
         );
         this.resetEventsStyle();
-        if (n) this.checkEventModal();
+        if (n) {
+          this.checkEventModal(n);
+        }
       } else if (e === "desktop" && n) {
         this.checkEventModal(n);
         Util.removeClass(this.element, "cd-schedule--loading");
@@ -678,7 +695,9 @@ Math.easeInOutQuad = function (e, t, n, a) {
     } else {
       Util.addClass(this.element, "js-schedule-loaded");
       this.placeEvents();
-      if (n) this.checkEventModal(n);
+      if (n) {
+        this.checkEventModal(n);
+      }
     }
   };
 
@@ -709,12 +728,16 @@ Math.easeInOutQuad = function (e, t, n, a) {
     for (let t = 0; t < this.singleEvents.length; t++) {
       this.singleEvents[t].addEventListener("click", function (t) {
         t.preventDefault();
-        if (!e.animating) e.openModal(this.getElementsByTagName("a")[0]);
+        if (!e.animating) {
+          e.openModal(this.getElementsByTagName("a")[0]);
+        }
       });
     }
     this.modalClose.addEventListener("click", function (t) {
       t.preventDefault();
-      if (!e.animating) e.closeModal();
+      if (!e.animating) {
+        e.closeModal();
+      }
     });
     this.coverLayer.addEventListener("click", function (t) {
       t.preventDefault();
@@ -978,7 +1001,9 @@ Math.easeInOutQuad = function (e, t, n, a) {
         if (window.requestAnimationFrame) {
           window.requestAnimationFrame(s);
         } else {
-          setTimeout(s, 250);
+          if (typeof setTimeout !== "undefined") {
+            setTimeout(s, 250);
+          }
         }
       }
     });
@@ -1000,7 +1025,7 @@ const modal = document.getElementById("presenter-modal");
 const modalContent = document.getElementById("presenter-modal-content");
 const closeModal = document.getElementsByClassName("close-modal-speakers")[0];
 const modalHtml = document.getElementById("presenter-modal-html");
-
+/* eslint-disable no-unused-vars */
 function showPresenterInfo(e) {
   modal.style.display = "block";
   modalContent.classList.add("fadeInUp");
@@ -1021,7 +1046,7 @@ function showPresenterInfo(e) {
     </div>`;
   modalHtml.innerHTML = t;
 }
-
+/* eslint-enable no-unused-vars */
 closeModal.onclick = function () {
   modal.style.display = "none";
   modalContent.classList.remove("fadeInUp");
