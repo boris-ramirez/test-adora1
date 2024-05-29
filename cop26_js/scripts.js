@@ -750,15 +750,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
       }
     });
   };
-  if (typeof setTimeout === "undefined") {
-    global.setTimeout = function (callback, delay) {
-      var start = Date.now();
-      while (Date.now() - start < delay) {
-        // Esperar
-      }
-      callback();
-    };
-  }
+
   e.prototype.openModal = function (e) {
     const t = this;
     document.body.classList.add("stop-scrolling");
@@ -771,7 +763,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
     this.modal.setAttribute("data-event", e.getAttribute("data-event"));
     this.loadEventContent(e.getAttribute("data-content"));
     Util.addClass(this.modal, "cd-schedule-modal--open");
-    setTimeout(() => {
+    window.setTimeout(() => {
       Util.addClass(e.closest("li"), "cd-schedule__event--selected");
     }, 10);
     if (n === "mobile") {
@@ -873,14 +865,14 @@ Math.easeInOutQuad = function (e, t, n, a) {
       e.modalHeaderBg.style.transform = "scaleY(1)";
       e.modalHeaderBg.addEventListener("transitionend", function t() {
         Util.addClass(e.modal, "cd-schedule-modal--no-transition");
-        setTimeout(() => {
+        window.setTimeout(() => {
           e.modal.removeAttribute("style");
           e.modalBody.removeAttribute("style");
           e.modalHeader.removeAttribute("style");
           e.modalHeaderBg.removeAttribute("style");
           e.modalBodyBg.removeAttribute("style");
         }, 10);
-        setTimeout(() => {
+        window.setTimeout(() => {
           Util.removeClass(e.modal, "cd-schedule-modal--no-transition");
         }, 20);
         e.animating = false;
@@ -912,7 +904,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
       const a = t.element
         .getElementsByClassName("cd-schedule__event--selected")[0]
         .getElementsByTagName("a")[0];
-      const i = a.getBoundingClientRect();
+      // const i = a.getBoundingClientRect();
       const o = a.offsetHeight;
       const s = a.offsetWidth;
       const r = window.innerWidth;
@@ -921,7 +913,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
       const c = 0.8 * l > t.modalMaxHeight ? t.modalMaxHeight : 0.8 * l;
       const h = c / o;
       const m = d - s;
-      setTimeout(() => {
+      window.setTimeout(() => {
         t.modal.setAttribute(
           "style",
           "top:" +
@@ -944,7 +936,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
           "height: " + o + "px;width:" + s + "px; transform:scaleY(" + h + ");"
         );
       }, 10);
-      setTimeout(() => {
+      window.setTimeout(() => {
         Util.removeClass(t.modal, "cd-schedule-modal--no-transition");
         t.animating = false;
       }, 20);
@@ -979,7 +971,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
 
   e.prototype.animationFallback = function () {
     if (!this.supportAnimation) {
-      const e = new CustomEvent("transitionend");
+      const e = new window.CustomEvent("transitionend");
       this.modal.dispatchEvent(e);
       this.modalHeaderBg.dispatchEvent(e);
     }
@@ -1015,8 +1007,8 @@ Math.easeInOutQuad = function (e, t, n, a) {
         if (window.requestAnimationFrame) {
           window.requestAnimationFrame(s);
         } else {
-          if (typeof setTimeout !== "undefined") {
-            setTimeout(s, 250);
+          if (typeof window.setTimeout !== "undefined") {
+            window.setTimeout(s, 250);
           }
         }
       }
