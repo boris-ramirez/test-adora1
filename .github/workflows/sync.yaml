@@ -45,4 +45,6 @@ jobs:
         run: htmlproofer ./ --allow-missing-href
 
       - name: Show Prettier Changes
-        run: git diff --color
+        run: |
+          echo "Files changed by Prettier:"
+          git ls-files -m
