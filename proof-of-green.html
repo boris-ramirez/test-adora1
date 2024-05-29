@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proof of Green (PoG) - A pioneering initiative for blockchain sustainability.">
+    <title>Proof of Green</title>
+    <!-- <link rel="stylesheet" href="stylewhite.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./proof-of-green/pog_logo.png" type="image/x-icon" />
+
+
+</head>
+
+
+<style>
+    /* Overriding the default colors for Tailwind */
+    .text-004b2e {
+        color: #004b2e;
+    }
+
+    .bg-004b2e {
+        background-color: #004b2e;
+    }
+</style>
+
+<style>
+    /* mini menu animation */
+    #navLinks {
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    #navLinks:not(.hidden) {
+        max-height: 300px;
+        /* Adjust if needed based on the number of items and their height */
+        opacity: 1;
+    }
+</style>
+
+<style>
+    /* CSS for smooth accordion animation */
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .accordion-content.show {
+        max-height: 500px;
+        /* Adjust this value based on your content */
+    }
+</style>
+</head>
+
+<body class="bg-white m-3">
+
+    <!-- Hero Section: Landing Image -->
+    <div class="relative top-0 sm:p-3 mb-8">
+        <img src="./proof-of-green/PoGLanding.png" alt="Proof of Green" id="hero" class="mx-auto w-full sm:w-5/6 max-w-4xl">
+    </div>
+
+    <!-- Call To Action -->
+    <div
+        class="flex justify-center items-center p-20 sm:p-2 bg-white space-y-0 max-w-6xl mx-auto flex-col gap-4 sm:flex-row">
+        <a href="https://1k4jfv1kpax.typeform.com/to/ANu94x7H/#" target="_blank" id="form"
+            class="mb-3 sm:mb-0 flex-shrink-0 w-48 h-12 flex items-center justify-center bg-green-700 hover:bg-green-600 text-white text-green-700 font-semibold rounded text-center">
+            Get involved
+        </a>
+        <a href="./proof-of-green/Proof of Green Concept Paper Draft 2.pdf" download id="paper"
+            class=" flex-shrink-0 w-48 h-12 flex items-center justify-center bg-green-700 hover:bg-green-600 text-white text-green-700 font-semibold rounded text-center">
+            Concept Paper
+        </a>
+   
+
+    <!-- <a href=#>
+        <img src="./proof-of-green/pog_logo_white.ec7a0051.png" alt="Proof of Green Logo" id="logo" class="relative top-8 center w-40  mx-auto hidden">
+    </a> -->
+</div>
+
+    <!-- Hidden content wrapper -->
+    <div id="hiddenContent" class="hidden mx-auto">
+
+        <!-- Intro -->
+        <section
+        class="mb-3 mt-3 relative p-3  lg:p-10 xl:p-16 shadow-md rounded-lg bg-green-700 transition duration-300 ease-in-out max-w-6xl mx-auto">
+        <div class="text-004b2e ">
+            <details
+                class="border border-004421 rounded bg-green-100 hover:shadow-lg hover:bg-green-100 transition-shadow duration-300 p-1">
+                <summary class="text-md sm:text-lg md:text-xl text-2xl font-bold text-004b2e mb-2 more">What is Proof of
+                    Green?
+                </summary>
+                <h2
+                    class="text-lg font-semibold text-green-800 mb-4 text-center bg-green-100">
+                    A groundbreaking initiative
+                    to achieve consensus on a set of minimum criteria for measuring and disclosing carbon emissions
+                    across blockchains
+                    and stakeholders.
+                </h2>
+
+
+                <section id="pitch"
+                    class="p-1 mt-4 shadow-md rounded-lg transition duration-300 ease-in-out max-w-full sm:max-w-xl md:max-w-2xl font-semibold">
+                    <a id="elevator-pitch"
+                        style="display: block; margin-top: -50px; padding-bottom: 50px; visibility: hidden;"></a>
+
+                    <details
+                        class="relative  border border-004421 rounded  hover:shadow-lg  transition-shadow duration-300 p-4">
+                        <summary class="text-lg font-semibold text-004b2e mb-2 more">The
+                            Elevator Pitch
+                        </summary>
+                        <div class="text-004421 mt-2 text-l">
+                            <div class="p-4 border border-004421 rounded bg-green-100 transition-shadow duration-300">
+                                <p class="relative top-2 text-004b2e mb-4 text-center  p-5">
+                                    <span class="text-004b2e font-bold italic">Proof of Green</span> is an expandable,
+                                    chain-agnostic specification document introducing the concept of a “Minimum Viable
+                                    Standard”.
+                                </p>
+                                <p class="relative top-2 text-004b2e mb-4 text-center p-5"> Rather than aiming to
+                                    compete with
+                                    or
+                                    replace any existing standards and approaches <span
+                                        class="text-004b2e font-bold italic">Proof
+                                        of Green</span> will be compatible with a wide variety of implementations,
+                                    articulating
+                                    a
+                                    foundational common ground that makes the differences of rigour and approach clearer
+                                    and
+                                    more
+                                    actionable.</p>
+                                <p class="relative top-2 text-004b2e mb-4 text-center p-5">It is intended, not as a
+                                    marketing
+                                    brand, but as a simple, rigorous, shared basis for interoperability and
+                                    comparability of
+                                    environmental impact metrics and
+                                    tools, enabling all stakeholders to connect through a shared language to discuss,
+                                    measure,
+                                    compare, mitigate and demonstrate environmental
+                                    impacts.</p>
+                            </div>
+                    </details>
+            </details>
+            </div>
+        </section>
+
+
+
+        <!-- Who is Proof-of-Green-For? -->
+        <section
+        class="mb-3 mt-3 relative p-3  lg:p-10 xl:p-16 shadow-md rounded-lg bg-green-700 transition duration-300 ease-in-out max-w-6xl mx-auto">
+        <div class="text-004b2e ">
+            <details
+                class="border border-004421 rounded bg-green-100 hover:shadow-lg hover:bg-green-100 transition-shadow duration-300 p-1">
+                <summary class="text-md sm:text-lg md:text-xl text-2xl font-bold text-004b2e mb-2 more">Why now?
+                    </summary>
+                    <h2 class="text-lg p-5 font-semibold">
+                        The future of humanity is already being impacted by blockchains.
+                        <br><br>
+                        Growing numbers of people feel an urgent stake in blockchains and are
+                        prepared to push.
+                        <br><br>
+                        Climate change is the one conversation where all these blockchain voices are forced into one
+                        room.
+                        <br><br>
+                        <span class="text-004b2e font-bold italic">Proof of Green</span> is a chance to find a common
+                        language at a crucial moment, with huge strategic potential for each stakeholder.
+
+                    </h2>
+
+                    <div class="p-4 md:p-10 flex-wrap">
+                        <details
+                            class="relative top-5 border border-004421 rounded bg-green-100 hover:shadow-lg hover:bg-green-100 transition-shadow duration-300 p-4">
+                            <summary class="text-xl font-semibold text-004b2e mb-2 more">Stakeholder
+                                opportunities
+                            </summary>
+
+                            <details
+                                class="bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 mb-3">
+                                <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">For Blockchains
+                                </summary>
+                                <div class="text-004421 mt-2">
+                                    <div
+                                        class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                        <ul class="pl-5 text-004421">
+                                            <li><i class="fas fa-leaf text-004b2e mr-3"></i>Use <span
+                                                    class="text-004b2e font-bold italic">Proof of Green</span> as a
+                                                foundation
+                                                to
+                                                credibly differentiate and showcase advanced green
+                                                initiatives.</li>
+                                            <li><i class="fas fa-seedling text-004b2e mr-3"></i>Enhance your public
+                                                image by
+                                                clearly
+                                                demonstrating a verifiable and trusted commitment
+                                                to sustainability.</li>
+                                            <li><i class="fas fa-globe text-004b2e mr-3"></i>Attract
+                                                environmentally-conscious
+                                                developers and users.</li>
+                                            <li><i class="fas fa-sun text-004b2e mr-3"></i>Reduce the market costs of
+                                                “guilt by
+                                                association” with a general message of blockchain
+                                                environmental destruction, differentiating in a widely agreed,
+                                                transparent and
+                                                respected
+                                                way.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+
+
+                            <details
+                                class="bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 mb-3">
+                                <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">For Researchers
+                                </summary>
+                                <div class="text-004421 mt-2">
+                                    <div
+                                        class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                        <ul class="pl-5 text-004421">
+                                            <li><i class="fas fa-book text-004b2e mr-3"></i>Access to a core standard
+                                                and shared
+                                                specification facilitates comparative studies and
+                                                interdisciplinary research.</li>
+                                            <li><i class="fas fa-search text-004b2e mr-3"></i>Play a defining role in
+                                                refining
+                                                and
+                                                evolving the metric.</li>
+                                            <li><i class="fas fa-handshake text-004b2e mr-3"></i>Collaborate with a
+                                                broad
+                                                spectrum
+                                                of industry stakeholders, enriching academic-industry
+                                                partnerships.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details
+                                class="bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 mb-3">
+                                <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">For Regulators
+                                </summary>
+                                <div class="text-004421 mt-2">
+                                    <div
+                                        class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                        <ul class="pl-5 text-004421">
+                                            <li><i class="fas fa-ruler-combined text-004b2e mr-3"></i>Simplifies
+                                                oversight by
+                                                having
+                                                a shared language and consistent metric across blockchain
+                                                platforms and applications.</li>
+                                            <li><i class="fas fa-scroll text-004b2e mr-3"></i>Enables the crafting of
+                                                informed,
+                                                effective, and nuanced policies.</li>
+                                            <li><i class="fas fa-satellite text-004b2e mr-3"></i>Streamlines
+                                                communication
+                                                between
+                                                the blockchain industry and regulatory bodies.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details
+                                class="bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 mb-3">
+                                <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">For Technologists
+                                </summary>
+                                <div class="text-004421 mt-2">
+                                    <div
+                                        class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                        <ul class="pl-5 text-004421">
+                                            <li><i class="fas fa-tools text-004b2e mr-3"></i>A universal starting point
+                                                fosters
+                                                the
+                                                development of compatible tools and solutions.
+                                            </li>
+                                            <li><i class="fas fa-handshake text-004b2e mr-3"></i>Greater opportunity for
+                                                collaborative projects and funding.</li>
+                                            <li><i class="fas fa-globe text-004b2e mr-3"></i>Reduction in redundancy:
+                                                build atop
+                                                a
+                                                shared foundation rather than from scratch.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details
+                                class="bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 mb-3">
+                                <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">For Existing
+                                    Emission
+                                    Metrics
+                                    Providers</summary>
+                                <div class="text-004421 mt-2">
+                                    <div
+                                        class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                        <ul class="pl-5 text-004421">
+                                            <li><i class="fas fa-rocket text-004b2e mr-3"></i><span
+                                                    class="text-004b2e font-bold italic">Proof of Green</span> acts as a
+                                                catalyst,
+                                                highlighting the depth, rigor, and unique strengths
+                                                of your own advanced metrics.</li>
+                                            <li><i class="fas fa-medal text-004b2e mr-3"></i>Opportunity for metrics to
+                                                become
+                                                industry gold standards by transparently correlating
+                                                and differentiating from alternatives.</li>
+                                            <li><i class="fas fa-lightbulb text-004b2e mr-3"></i>Foster synergies with
+                                                other
+                                                metrics, enhancing the collective learning.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details
+                                class="bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 mb-3">
+                                <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">For Civil Society
+                                    Organizations
+                                </summary>
+                                <div class="text-004421 mt-2">
+                                    <div
+                                        class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                        <ul class="pl-5 text-004421">
+                                            <li><i class="fas fa-globe-americas text-004b2e mr-3"></i>Align
+                                                sustainability goals
+                                                with technological advancements, bridging the gap between
+                                                ecology and technology.</li>
+                                            <li><i class="fas fa-chart-bar text-004b2e mr-3"></i>Access verifiable and
+                                                standardized
+                                                metrics for campaigns, awareness drives, and
+                                                stakeholder engagement.</li>
+                                            <li><i class="fas fa-shield-alt text-004b2e mr-3"></i>Enhance trust with
+                                                donors and
+                                                stakeholders through transparent and credible
+                                                environmental practices.</li>
+                                            <li><i class="fas fa-robot text-004b2e mr-3"></i>Play a pivotal role in
+                                                shaping
+                                                public
+                                                discourse around green technologies, influencing
+                                                policy and industry practices.</li>
+                                            <li><i class="fas fa-hands-helping text-004b2e mr-3"></i>Foster
+                                                collaborations with
+                                                technologists and researchers, driving community-driven
+                                                solutions.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+                        </details>>
+                </details>
+            </div>
+
+
+    </section>
+
+    <section
+    class="mb-3 mt-3 relative p-3  lg:p-10 xl:p-16 shadow-md rounded-lg bg-green-700 transition duration-300 ease-in-out max-w-6xl mx-auto">
+    <div class="text-004b2e ">
+        <details
+            class="border border-004421 rounded bg-green-100 hover:shadow-lg hover:bg-green-100 transition-shadow duration-300 p-1">
+            <summary class="text-md sm:text-lg md:text-xl text-2xl font-bold text-004b2e mb-2 more">Strategic context
+            </summary>
+            <h2 class="text-xl md:text-2xl font-bold"></h2>
+            <h2 class="text-md md:text-xl font-semibold py-4">
+                The blockchain industry faces growing scrutiny, reputational and regulatory challenges, as well as
+                massive opportunities to differentiate and reduce its environmental impact.
+            </h2>
+            <div class="p-4 md:p-10 flex-wrap">
+                <details
+                    class="relative top-5 border border-004421 rounded bg-green-100 hover:shadow-lg hover:bg-green-100 transition-shadow duration-300 p-4">
+                    <summary class="text-xl font-semibold text-004b2e mb-2 more">Strategic needs
+                    </summary>
+
+                    <details
+                        class="border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 bg-green-100 mb-3">
+                        <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer overflow-y-auto">
+                            Transparency</summary>
+                        <div class="text-004421 mt-2 font-semibold">
+                            <div class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                <p class="text-004421">
+                                    A standardized method of disclosure will make it easier for users, investors, and
+                                    regulators
+                                    to understand the environmental impact of different blockchain networks and
+                                    applications.
+                                    <br><br>
+                                    This could lead to greater accountability and pressure to reduce emissions.
+                                </p>
+                            </div>
+                    </details>
+                    <details
+                        class="hover:bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 bg-green-100 mb-3">
+                        <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">Public Trust</summary>
+                        <div class="text-004421 mt-2 font-semibold">
+                            <div class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                <p class="text-004421">
+                                    The energy consumption and environmental impact of blockchain technology, has been a
+                                    controversial issue.
+                                    <br><br>
+                                    A consensus on emission disclosure could help improve the public
+                                    perception of blockchain technology by demonstrating a commitment to transparency
+                                    and
+                                    environmental responsibility.
+                                </p>
+                            </div>
+                    </details>
+                    <details
+                        class="hover:bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 bg-green-100 mb-3">
+                        <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">Comparability</summary>
+                        <div class="text-004421 mt-2 font-semibold">
+                            <div class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                <p class="text-004421">
+                                    With a standardized measurement method, it will be possible to compare the emissions
+                                    of
+                                    different blockchains and applications directly.
+                                    <br><br>
+                                    This could incentivize blockchains to
+                                    become more efficient in order to be more attractive to environmentally conscious
+                                    users
+                                    and
+                                    investors.
+                                </p>
+                            </div>
+                    </details>
+                    <details
+                        class="hover:bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 bg-green-100 mb-3">
+                        <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">Regulatory Influence
+                        </summary>
+                        <div class="text-004421 mt-2 font-semibold">
+                            <div class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                <p class="text-004421">
+                                    Shared standards and vocabularies for the disclosure of emissions facilitate both
+                                    negotiation and adoption of
+                                    accelerating environmental regulation of blockchain technologies.<br>
+                                    <br><span class="text-004b2e font-bold italic">Proof of Green</span> will be a lever
+                                    to
+                                    maximise environmental, product and market fit before
+                                    a gathering regulatory wave.
+                                </p>
+                            </div>
+                    </details>
+                    <details
+                        class="hover:bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 bg-green-100 mb-3">
+                        <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">Innovation</summary>
+                        <div class="text-004421 mt-2 font-semibold">
+                            <div class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                <p class="text-004421">
+                                    The need to reduce emissions could drive innovation in the blockchain space, leading
+                                    to
+                                    the
+                                    development of more energy-efficient consensus mechanisms and other technologies.
+                                    <br><br>
+                                    Chain-specific tooling can also grow from this standard, such as blockchain mining
+                                    with
+                                    emission
+                                    ceilings, or regulatory alerts and dashboards when a chain or node exceeds agreed
+                                    targets,
+                                    or places strain upon the domestic electricity grid.
+                                </p>
+                            </div>
+                    </details>
+                    <details
+                        class="hover:bg-green-100 border border-004421 rounded hover:shadow-lg transition-shadow duration-300 p-4 bg-green-100 mb-3">
+                        <summary class="text-lg font-semibold text-004b2e mb-2 cursor-pointer">Investment</summary>
+                        <div class="text-004421 mt-2 font-semibold">
+                            <div class="p-4 border border-004421 rounded transition-shadow duration-300 bg-green-200">
+                                <p class="text-004421">
+                                    Investors are increasingly considering environmental factors in their investment
+                                    decisions.
+                                    <br><br>
+                                    A standard for measuring and disclosing blockchain emissions could influence
+                                    investment
+                                    flows in the blockchain space, potentially favoring more energy-efficient networks,
+                                    applications, and user behaviors.
+                                </p>
+                            </div>
+                    </details>
+                </details>
+                </div>
+    </section>
+    
+    
+
+
+    <div class="p-12"></div>
+    <footer
+        class="fixed bottom-0 left-0 right-0 bg-gray-50 text-purple py-1 flex justify-center items-center px-4">
+        <a href="https://adorafoundation.org" target="_blank">
+            <img src="./assets/images/AdoraButterflyLogo.png" alt="Adora Foundation" class="sm:w-15 w-10">        </a>
+    </footer>
+</body>
+
+
+
+
+<script>
+    // Scroll trigger logic
+    const hiddenContent = document.getElementById('hiddenContent');
+    const intro = document.getElementById('intro');
+    const form = document.getElementById('form');
+    const paper = document.getElementById('paper');
+    setTimeout(() => {
+        form.classList.remove('text-green-700')
+    }, 500);
+    setTimeout(() => {
+        paper.classList.remove('text-green-700')
+
+    }, 1000);
+    setTimeout(() => {
+        hiddenContent.classList.remove('hidden');
+        intro.classList.add('bg-green-500')
+
+    }, 1500);
+
+
+
+
+
+
+
+    // document.addEventListener('scroll', function () {
+    //     const sections = document.querySelectorAll('section');
+    //     const halfWindowHeight = window.innerHeight / 2.3;
+
+    //     sections.forEach(function (section) {
+    //         const rect = section.getBoundingClientRect();
+    //         const isInSectionMiddle = (rect.top < halfWindowHeight) ||
+    //             (rect.bottom > halfWindowHeight && rect.bottom < window.innerHeight);
+
+    //         if (isInSectionMiddle) {
+    //             // The section is around the middle of the screen
+    //             section.classList.add('bg-green-600');
+    //         } else {
+    //             section.classList.remove('bg-green-600');
+    //         }
+    //     });
+    // });
+
+</script>
+
+
+
+
+<!-- Hamburger Menu Button -->
+<!-- <button id="toggleMenu"
+        class="fixed top-20 left-0 z-50 p-4 rounded bg-004b2e hover:bg-004421 text-white transition-colors duration-100">
+        <i class="fas fa-bars"></i> <span class="text-004b2e font-bold italic">Proof of Green</span> 
+    </button> -->
+
+<!-- Side Navigation (  ) -->
+<!-- <div class="fixed z-50 top-20 mt-16 bg-white shadow-md fixed top-0 left-0 w-64 h-full overflow-y-auto transform translate-x-[-100%] transition-transform duration-300 hidden"
+        id="mobileMenu">
+        <nav class="space-y-4 p-4">
+            <div class="accordion">
+                <button
+                    class="accordion-button text-004b2e flex justify-between items-center p-2 w-full hover:bg-gray-100 transition-colors duration-100">
+                    <span>What is it?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content hidden space-y-2">
+                    <a href="#intro" class="block pl-2 md:pl-4 py-1 hover:text-green-700">What's Proof of Green</a>
+                    <a href="#elevator-pitch" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Elevator Pitch</a>
+                    <a href="#cta" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Next Steps</a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button
+                    class="accordion-button flex justify-between items-center text-004b2e p-2 w-full hover:bg-gray-100 transition-colors duration-100">
+                    How does it work?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content hidden space-y-2">
+                    <a href="#Specification" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Proof of Green Specification</a>
+                    <a href="#Organization" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Proof of Green Foundation</a>
+                    <a href="#Governance" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Governance Principles</a>
+                    <a href="#Processes" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Collaboration Spaces</a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button
+                    class="accordion-button flex justify-between items-center text-004b2e p-2 w-full hover:bg-gray-100 transition-colors duration-100">
+                    What's the Plan?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content hidden space-y-2">
+                    <a href="#Milestones" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Milestones</a>
+                    <a href="#COP28" class="block pl-2 md:pl-4 py-1 hover:text-green-700">COP 28 Launch</a>
+                    <a href="#Todos" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Next Steps</a>
+                    <a href="#Timeline" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Timescales</a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button
+                    class="accordion-button flex justify-between items-center text-004b2e p-2 w-full hover:bg-gray-100 transition-colors duration-100">
+                    Participation Tiers
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content hidden space-y-2">
+                    <a href="#trustees" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Trustees</a>
+                    <a href="#partners" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Partners</a>
+                    <a href="#collaborators" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Collaborators</a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button
+                    class="accordion-button flex justify-between items-center text-004b2e p-2 w-full hover:bg-gray-100 transition-colors duration-100">
+                    Call to Action
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content hidden space-y-2">
+                    <a href="#Act" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Join Proof of Green</a>
+                    <a href="#Events" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Forthcoming Events</a>
+                    <a href="#institutional-principles" class="block pl-2 md:pl-4 py-1 hover:text-green-700">Resources</a>
+                </div>
+            </div>
+            <a href="#faq" class="block text-004b2e">FAQ</a>
+            <a href="#people" class="block text-004b2e">Who is involved</a>
+        </nav>
+    </div> -->
+<!-- 
+
+    <script>
+        // JavaScript for accordion functionality
+        let acc = document.getElementsByClassName("accordion-button");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.nextElementSibling.classList.toggle("show");
+                let icon = this.querySelector("i");
+                if (icon.classList.contains('fa-chevron-down')) {
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                } else {
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Small Menu Toggle Logic
+
+        document.getElementById('hamburgerBtn').addEventListener('click', function () {
+            var navLinks = document.getElementById('navLinks');
+            if (navLinks.classList.contains('hidden')) {
+                navLinks.classList.remove('hidden');
+            } else {
+                navLinks.classList.add('hidden');
+            }
+        });
+
+        // Close the menu when a nav item is clicked
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.getElementById('navLinks').classList.add('hidden');
+            });
+        });
+    </script>
+
+
+
+    <script>
+        // Big Menu Toggle Logic
+        const toggleButton = document.getElementById('toggleMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        toggleButton.addEventListener('click', function () {
+            if (mobileMenu.style.transform === 'translateX(0%)') {
+                mobileMenu.style.transform = 'translateX(-100%)';
+                // Introduce a delay to add the hidden class back after the transition completes
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                toggleButton.innerHTML = '<i class="fas fa-bars"></i> Proof of Green';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.style.transform = 'translateX(0%)';
+                toggleButton.innerHTML = '<i class="fas fa-times"></i> Proof of Green';
+            }
+        });
+
+        // Accordion Logic
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = this.querySelector('i');
+                if (content.classList.contains('hidden')) {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+
+    </script> -->
+
+
+</body>
+
+</html>

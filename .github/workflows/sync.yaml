@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - dev-Boris
+  pull_request:
+    branches:
+      - dev-Boris
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install ESLint
+        run: npm install -g eslint
+
+      - name: eslint code
+        run: eslint "**/*.js"
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --write **/*.{js,md}
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install HTMLProofer
+        run: gem install html-proofer
+
+      - name: Check HTML
+        run: htmlproofer ./ --allow-missing-href
+
+      - name: Show Prettier Changes
+        run: |
+          echo "Files changed by Prettier:"
+          find . -type f -name '*.js' -o -name '*.md' | xargs git diff --color

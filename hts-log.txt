@@ -1,0 +1,11 @@
+HTTrack3.49-2 launched on Sun, 08 Oct 2023 02:25:40 at https://www.proofofgreen.dev/#
+(httrack -%e0 -w -q -%i -iC2 -D -p3 -#p https://www.proofofgreen.dev/# )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+
+HTTrack Website Copier/3.49-2 mirror complete in 15 seconds : 15 links scanned, 14 files written (1206058 bytes overall) [934579 bytes received at 62305 bytes/sec], 420080 bytes transferred using HTTP compression in 12 files, ratio 32%, 5.0 requests per connection
+(No errors, 0 warnings, 0 messages)

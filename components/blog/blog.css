@@ -1,0 +1,105 @@
+/* blog.css */
+@import url("http://fonts.googleapis.com/css?family=Oswald");
+@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed");
+
+#container-blog {
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+#blog-content {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+}
+
+#blog-content img {
+  max-width: 100%; /* Asegura que las imágenes no sean más anchas que el contenedor */
+  height: auto; /* Mantiene la relación de aspecto de las imágenes */
+  display: block; /* Elimina cualquier espacio adicional alrededor de la imagen */
+  margin: 20px 0; /* Agrega algo de espacio alrededor de la imagen */
+}
+
+#container-blog p {
+  text-align: justify;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+#container-blog img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Centra las imágenes */
+}
+
+#thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacio entre miniaturas */
+  margin-top: 40px;
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.thumbnail {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden; /* Ocultar el desbordamiento */
+  position: relative;
+  transition: transform 0.2s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Asegura que la imagen esté encima del texto */
+  align-items: center;
+  width: 200px; /* Ancho de las miniaturas */
+  max-width: 300px; /* Ancho máximo de las miniaturas */
+  padding: 10px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área del contenedor sin distorsionarse */
+  display: block;
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.thumbnail p {
+  display: flex;
+  width: 100%;
+  font-size: 16px;
+  text-align: center; /* Centrar el texto */
+  margin: 0;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 600px) {
+  #container-blog h1 {
+    font-size: 3rem;
+  }
+
+  #container-blog h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 900px) {
+  #container-blog h1 {
+    font-size: 2.2rem;
+  }
+
+  #container-blog h2 {
+    font-size: 1.6rem;
+  }
+}
