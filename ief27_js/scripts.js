@@ -705,7 +705,7 @@ if (
           window.setTimeout(function () {
             Util.addClass(e.closest("li"), "cd-schedule__event--selected");
           }, 10),
-          "mobile" == n)
+          "mobile" === n)
         ) {
           t.modal.addEventListener("transitionend", function e() {
             (t.animating = !1), t.modal.removeEventListener("transitionend", e);
@@ -781,7 +781,7 @@ if (
             "cd-schedule__event--selected"
           )[0],
           a = n.getElementsByTagName("a")[0];
-        if (((this.animating = !0), "mobile" == t)) {
+        if (((this.animating = !0), "mobile" === t)) {
           Util.removeClass(this.modal, "cd-schedule-modal--open"),
             e.modal.addEventListener("transitionend", function t() {
               Util.removeClass(e.modal, "cd-schedule-modal--content-loaded"),
@@ -833,7 +833,7 @@ if (
         this.animating = !0;
         var t = this,
           n = this.mq();
-        if ("mobile" == n) {
+        if ("mobile" === n) {
           t.modal.removeAttribute("style"),
             t.modalBody.removeAttribute("style"),
             t.modalHeader.removeAttribute("style"),
@@ -841,7 +841,7 @@ if (
             t.modalBodyBg.removeAttribute("style"),
             Util.removeClass(t.modal, "cd-schedule-modal--no-transition"),
             (t.animating = !1);
-        } else if ("desktop" == n && e) {
+        } else if ("desktop" === n && e) {
           Util.addClass(
             t.modal,
             "cd-schedule-modal--no-transition cd-schedule-modal--animation-completed"
@@ -920,8 +920,8 @@ if (
         );
       }),
       (e.prototype.animationFallback = function () {
-        if (!this.supportAnimation) {
-          var e = new CustomEvent("transitionend");
+        if (!this.supportAnimation && self !== undefined) {
+          var e = new window.CustomEvent("transitionend");
           self.modal.dispatchEvent(e), self.modalHeaderBg.dispatchEvent(e);
         }
       }),
@@ -948,7 +948,7 @@ if (
         i = !1;
       }
 
-      window.addEventListener("resize", function (e) {
+      window.addEventListener("resize", function () {
         i ||
           ((i = !0),
           window.requestAnimationFrame
@@ -957,8 +957,8 @@ if (
       }),
         window.addEventListener("keyup", function (e) {
           if (
-            (e.keyCode && 27 == e.keyCode) ||
-            (e.key && "escape" == e.key.toLowerCase())
+            (e.keyCode && 27 === e.keyCode) ||
+            (e.key && "escape" === e.key.toLowerCase())
           ) {
             for (var t = 0; t < a.length; t++) {
               a[t].closeModal();
@@ -990,12 +990,13 @@ function showPresenterInfo(e) {
   }</p><p>${speakersInfo[e].url || ""}</p></div>\n\t`;
   modalHtml.innerHTML = t;
 }
-
-(closeModal.onclick = function () {
-  (modal.style.display = "none"),
-    modalContent.classList.remove("fadeInUp"),
-    document.body.classList.remove("stop-scrolling");
-}),
+console.log(showPresenterInfo("e"))(
+  (closeModal.onclick = function () {
+    (modal.style.display = "none"),
+      modalContent.classList.remove("fadeInUp"),
+      document.body.classList.remove("stop-scrolling");
+  })
+),
   (window.onclick = function (e) {
     e.target === modal &&
       ((modal.style.display = "none"),
