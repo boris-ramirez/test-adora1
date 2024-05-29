@@ -589,7 +589,9 @@ if (typeof window !== "undefined" && typeof window.Element !== "undefined") {
     function (selector) {
       let el = this;
       while (el && el.nodeType === 1) {
-        if (el.matches(selector)) return el;
+        if (el.matches(selector)) {
+          return el;
+        }
         el = el.parentElement || el.parentNode;
       }
       return null;
@@ -1001,7 +1003,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
       i = false;
     }
 
-    window.addEventListener("resize", function (e) {
+    window.addEventListener("resize", function () {
       if (!i) {
         i = true;
         if (window.requestAnimationFrame) {
