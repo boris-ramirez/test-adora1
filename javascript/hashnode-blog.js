@@ -19,10 +19,12 @@ gql(GET_USER_ARTICLES, { page: 0 }).then((result) => {
 
   articles.forEach((article) => {
     let card = document.createElement("div");
+    console.log(card);
     let title = document.createElement("h2");
     title.innerText = article.title;
 
     let brief = document.createElement("p");
+    console.log(brief);
     // brief.innerText = article.brief;
     let img = document.createElement("img");
     img.src = article.coverImage;
