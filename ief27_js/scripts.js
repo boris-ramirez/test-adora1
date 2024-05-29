@@ -920,9 +920,10 @@ if (
         );
       }),
       (e.prototype.animationFallback = function () {
-        if (!this.supportAnimation && self !== undefined) {
+        if (!this.supportAnimation && typeof self !== "undefined") {
           var e = new window.CustomEvent("transitionend");
-          self.modal.dispatchEvent(e), self.modalHeaderBg.dispatchEvent(e);
+          this.modal.dispatchEvent(e);
+          this.modalHeaderBg.dispatchEvent(e);
         }
       }),
       (e.prototype.mq = function () {
