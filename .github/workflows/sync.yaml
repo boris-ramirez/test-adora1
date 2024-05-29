@@ -26,7 +26,7 @@ jobs:
         run: npm install -g eslint
 
       - name: eslint code
-        run: eslint "**/*.js" --debug
+        run: eslint "**/*.js"
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.3

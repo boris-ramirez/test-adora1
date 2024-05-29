@@ -1,139 +1,133 @@
 {
   "carousel": [
     {
-      "src": "assets/cop26_assets/carbon-crowd.png",
+      "src": "../../assets/logos/carbon-crowd.png",
       "href": "https://carboncrowd.io/",
       "target": "_blank",
       "alt": "Carbon Crowd Logo"
     },
     {
-      "src": "assets/cop26_assets/IC_logo_horizontal.svg",
+      "src": "../../assets/logos/IC_logo_horizontal.svg",
       "href": "https://internetcomputer.org/",
       "target": "_blank",
       "alt": "IC Logo"
     },
     {
-      "src": "assets/cop26_assets/logo-DFINITY.svg",
+      "src": "../../assets/logos/logo-DFINITY.svg",
       "href": "https://dfinity.org/",
       "target": "_blank",
       "alt": "DFINITY Logo"
     },
     {
-      "src": "assets/cop26_assets/cfall-logo.svg",
+      "src": "../../assets/logos/cfall-logo.svg",
       "href": "https://codeforall.org/",
       "target": "_blank",
       "alt": "CFALL Logo"
     },
     {
-      "src": "assets/cop26_assets/PHP Mexico.jpg",
+      "src": "../../assets/logos/PHP Mexico.jpg",
       "href": "https://phpmexico.mx/",
       "target": "_blank",
       "alt": "PHP Mexico Logo"
     },
     {
-      "src": "assets/cop26_assets/UWE_Bristol_logo.svg",
+      "src": "../../assets/logos/UWE_Bristol_logo.svg",
       "href": "https://www.uwe.ac.uk/",
       "target": "_blank",
       "alt": "UWE Bristol Logo"
     },
     {
-      "src": "assets/cop26_assets/University_of_Brighton_logo.svg",
+      "src": "../../assets/logos/University_of_Brighton_logo.svg",
       "href": "https://www.brighton.ac.uk/index.aspx",
       "target": "_blank",
       "alt": "University of Brighton Logo"
     },
     {
-      "src": "assets/cop26_assets/new-logo-2.svg",
+      "src": "../../assets/logos/new-logo-2.svg",
       "href": "https://www.cop28.com/",
       "target": "_blank",
       "alt": "New Logo 2"
     },
     {
-      "src": "assets/cop26_assets/2015_Climate_Conference.svg",
+      "src": "../../assets/logos/2015_Climate_Conference.svg",
       "href": "http://www.cop21.gouv.fr/en",
       "target": "_blank",
       "alt": "2015 Climate Conference Logo"
     },
     {
-      "src": "assets/cop26_assets/w3c-no-bars.svg",
+      "src": "../../assets/logos/w3c-no-bars.svg",
       "href": "https://www.w3.org/",
       "target": "_blank",
       "alt": "W3C Logo"
     },
     {
-      "src": "assets/cop26_assets/earthshift_logo.svg",
+      "src": "../../assets/logos/earthshift_logo.svg",
       "href": "https://earthshiftglobal.com/",
       "target": "_blank",
       "alt": "EarthShift Logo"
     },
     {
-      "src": "assets/cop26_assets/WattTime-logo-2023-black-1920px.png",
+      "src": "../../assets/logos/WattTime-logo-2023-black-1920px.png",
       "href": "https://watttime.org/",
       "target": "_blank",
       "alt": "WattTime Logo"
     },
     {
-      "src": "assets/cop26_assets/RSA_logo.svg",
+      "src": "../../assets/logos/RSA_logo.svg",
       "href": "https://www.thersa.org/",
       "target": "_blank",
       "alt": "RSA Logo"
     },
     {
-      "src": "assets/cop26_assets/AWG_logotype_clr_250x236.jpg",
+      "src": "../../assets/logos/AWG_logotype_clr_250x236.jpg",
       "href": "https://www.arcticwintergames.org/",
       "target": "_blank",
       "alt": "AWG Logo"
     },
     {
-      "src": "assets/cop26_assets/earth-charter.svg",
+      "src": "../../assets/logos/earth-charter.svg",
       "href": "https://earthcharter.org/",
       "target": "_blank",
       "alt": "Earth Charter Logo"
     },
     {
-      "src": "assets/cop26_assets/CAT-logo-stacked.svg",
+      "src": "../../assets/logos/CAT-logo-stacked.svg",
       "href": "https://climateaction.tech/",
       "target": "_blank",
       "alt": "CAT Logo"
     },
     {
-      "src": "assets/cop26_assets/greensoftware.svg",
+      "src": "../../assets/logos/greensoftware.svg",
       "href": "https://greensoftware.foundation/",
       "target": "_blank",
       "alt": "GreenSoftware Logo"
     },
     {
-      "src": "assets/cop26_assets/Green-Web-Foundation-logo.svg",
+      "src": "../../assets/logos/Green-Web-Foundation-logo.svg",
       "href": "https://www.thegreenwebfoundation.org/",
       "target": "_blank",
       "alt": "Green Web Foundation Logo"
     },
     {
-      "src": "assets/cop26_assets/UNESCO_logo.svg",
+      "src": "../../assets/logos/UNESCO_logo.svg",
       "href": "https://www.unesco.org/",
       "target": "_blank",
       "alt": "UNESCO Logo"
     },
     {
-      "src": "assets/cop26_assets/IFRC_logo.svg",
+      "src": "../../assets/logos/IFRC_logo.svg",
       "href": "https://www.ifrc.org/",
       "target": "_blank",
       "alt": "IFRC Logo"
     },
     {
-      "src": "assets/cop26_assets/COP26_logo.png",
+      "src": "../../assets/logos/COP26_logo.png",
       "href": "#",
       "target": "_blank",
       "alt": "COP26 Logo"
     },
     {
-      "src": "assets/cop26_assets/IEF_logo.gif",
-      "href": "https://iefworld.org",
-      "target": "_blank",
-      "alt": "IEF Logo"
-    },
-    {
-      "src": "assets/cop26_assets/ebbf_logo.jpeg",
+      "src": "../../assets/logos/ebbf_logo.jpeg",
       "href": "https://ebbf.org",
       "target": "_blank",
       "alt": "ebbf Logo"

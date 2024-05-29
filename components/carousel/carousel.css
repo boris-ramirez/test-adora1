@@ -4,7 +4,7 @@
 .carousel-container {
   position: relative;
   max-width: 60%;
-  margin: 100px auto;
+  margin: auto;
 }
 
 .carousel {

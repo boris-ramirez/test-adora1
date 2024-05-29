@@ -1,0 +1,121 @@
+/* Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2em;
+    color: #006400;  /* Dark Green, inspired by the leaves image */
+}
+
+h2 {
+    font-size: 1.7em;
+    color: #228B22;  /* Forest Green, inspired by the logo */
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* Layout */
+header, nav, main, footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section:not(:last-child) {
+    margin-bottom: 60px;
+}
+
+h1, h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* Landing Block Styles */
+#landing-block {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;  /* A light gray background to distinguish the landing block */
+    border-bottom: 2px solid #eee;
+}
+
+#landing-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #eee;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #228B22;  /* Forest Green, inspired by the logo */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #e6e6e6;
+}
+
+/* Section Styles */
+section {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h1 {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+section p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Finalizing the design */
+footer {
+    padding: 40px 0;
+    color: #888;
+}
