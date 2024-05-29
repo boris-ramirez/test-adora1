@@ -45,5 +45,4 @@ jobs:
         run: htmlproofer ./ --allow-missing-href
 
       - name: Show Prettier Changes
-        run: |
-          git diff --color
+        run: git diff --color
