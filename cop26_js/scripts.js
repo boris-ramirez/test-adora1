@@ -606,7 +606,7 @@ if (typeof window.CustomEvent !== "function") {
       event,
       params.bubbles,
       params.cancelable,
-      params.detail
+      params.detail,
     );
     return evt;
   }
@@ -632,34 +632,34 @@ Math.easeInOutQuad = function (e, t, n, a) {
       t(this.timelineItems[1].textContent) -
       t(this.timelineItems[0].textContent);
     this.topInfoElement = this.element.getElementsByClassName(
-      "cd-schedule__top-info"
+      "cd-schedule__top-info",
     )[0];
     this.singleEvents =
       this.element.getElementsByClassName("cd-schedule__event");
     this.modal = this.element.getElementsByClassName("cd-schedule-modal")[0];
     this.modalHeader = this.element.getElementsByClassName(
-      "cd-schedule-modal__header"
+      "cd-schedule-modal__header",
     )[0];
     this.modalHeaderBg = this.element.getElementsByClassName(
-      "cd-schedule-modal__header-bg"
+      "cd-schedule-modal__header-bg",
     )[0];
     this.modalBody = this.element.getElementsByClassName(
-      "cd-schedule-modal__body"
+      "cd-schedule-modal__body",
     )[0];
     this.modalBodyBg = this.element.getElementsByClassName(
-      "cd-schedule-modal__body-bg"
+      "cd-schedule-modal__body-bg",
     )[0];
     this.modalClose = this.modal.getElementsByClassName(
-      "cd-schedule-modal__close"
+      "cd-schedule-modal__close",
     )[0];
     this.modalDate = this.modal.getElementsByClassName(
-      "cd-schedule-modal__date"
+      "cd-schedule-modal__date",
     )[0];
     this.modalEventName = this.modal.getElementsByClassName(
-      "cd-schedule-modal__name"
+      "cd-schedule-modal__name",
     )[0];
     this.coverLayer = this.element.getElementsByClassName(
-      "cd-schedule__cover-layer"
+      "cd-schedule__cover-layer",
     )[0];
     this.modalMaxWidth = 800;
     this.modalMaxHeight = 480;
@@ -686,7 +686,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
       if (e === "mobile" && t) {
         Util.removeClass(
           this.element,
-          "cd-schedule--loading js-schedule-loaded"
+          "cd-schedule--loading js-schedule-loaded",
         );
         this.resetEventsStyle();
         if (n) {
@@ -723,7 +723,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
       const r = (e * o) / this.timelineUnitDuration;
       this.singleEvents[n].setAttribute(
         "style",
-        "top: " + (s - 1) + "px; height: " + (r + 1) + "px"
+        "top: " + (s - 1) + "px; height: " + (r + 1) + "px",
       );
     }
     Util.removeClass(this.element, "cd-schedule--loading");
@@ -801,7 +801,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
           u +
           "px) translateX(" +
           m +
-          "px)"
+          "px)",
       );
       t.modalHeader.setAttribute("style", "width:" + r + "px");
       t.modalBody.setAttribute("style", "margin-left:" + r + "px");
@@ -813,11 +813,11 @@ Math.easeInOutQuad = function (e, t, n, a) {
           g +
           ") scaleX(" +
           p +
-          ")"
+          ")",
       );
       t.modalHeaderBg.setAttribute(
         "style",
-        "height: " + s + "px; width: " + r + "px; transform: scaleY(" + g + ")"
+        "height: " + s + "px; width: " + r + "px; transform: scaleY(" + g + ")",
       );
       t.modalHeaderBg.addEventListener("transitionend", function e() {
         t.animating = false;
@@ -833,7 +833,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
     document.body.classList.remove("stop-scrolling");
     const t = e.mq();
     const n = e.element.getElementsByClassName(
-      "cd-schedule__event--selected"
+      "cd-schedule__event--selected",
     )[0];
     const a = n.getElementsByTagName("a")[0];
     e.animating = true;
@@ -857,7 +857,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
       const m = o - c;
       Util.removeClass(
         this.modal,
-        "cd-schedule-modal--open cd-schedule-modal--animation-completed"
+        "cd-schedule-modal--open cd-schedule-modal--animation-completed",
       );
       e.modal.style.width = l + "px";
       e.modal.style.height = r + "px";
@@ -901,7 +901,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
     } else if (n === "desktop" && e) {
       Util.addClass(
         t.modal,
-        "cd-schedule-modal--no-transition cd-schedule-modal--animation-completed"
+        "cd-schedule-modal--no-transition cd-schedule-modal--animation-completed",
       );
       const a = t.element
         .getElementsByClassName("cd-schedule__event--selected")[0]
@@ -926,7 +926,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
             c +
             "px;width:" +
             d +
-            "px;transform: translateY(0) translateX(0)"
+            "px;transform: translateY(0) translateX(0)",
         );
         t.modalBodyBg.style.height = c + "px";
         t.modalBodyBg.style.transform = "scaleY(1) scaleX(" + m + ")";
@@ -935,7 +935,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
         t.modalBody.setAttribute("style", "margin-left:" + s + "px");
         t.modalHeaderBg.setAttribute(
           "style",
-          "height: " + o + "px;width:" + s + "px; transform:scaleY(" + h + ");"
+          "height: " + o + "px;width:" + s + "px; transform:scaleY(" + h + ");",
         );
       }, 10);
       window.setTimeout(() => {
@@ -959,7 +959,7 @@ Math.easeInOutQuad = function (e, t, n, a) {
           .join("")}
       </div>`;
     this.modal.getElementsByClassName(
-      "cd-schedule-modal__event-info"
+      "cd-schedule-modal__event-info",
     )[0].innerHTML = t;
     Util.addClass(this.modal, "cd-schedule-modal--content-loaded");
   };
@@ -1049,8 +1049,8 @@ function showPresenterInfo(e) {
       <p>${speakersInfo[e].description || ""}</p>
       <h5>Bio</h5>
       <p>${speakersInfo[e].bio || "No bio"}</p><p>${
-    speakersInfo[e].url || ""
-  }</p>
+        speakersInfo[e].url || ""
+      }</p>
     </div>`;
   modalHtml.innerHTML = t;
 }

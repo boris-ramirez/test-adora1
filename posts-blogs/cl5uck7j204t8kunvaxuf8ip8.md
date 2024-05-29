@@ -4,15 +4,13 @@ Today we take a deep dive into technical debt: what is it, when is it good, when
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1658365848019/lXG6VHiRN.png align="left")
 
-
 ## Defining technical debt
 
-Very often, tech debt is defined as a conscious trade off of quality for speed, or a result of poor design decisions. But while both of those are good examples of tech debt, tech debt can also come to absolutely top quality code: if it fails to evolve with the tech ecosystem. The cutting edge app of 2010 is very often the creaky, slow and plainful monolith of in 2020. It's not that the original choices were suboptimal: it's that time moves fast in tech, and code needs to constantly evolve to keep in sync. 
+Very often, tech debt is defined as a conscious trade off of quality for speed, or a result of poor design decisions. But while both of those are good examples of tech debt, tech debt can also come to absolutely top quality code: if it fails to evolve with the tech ecosystem. The cutting edge app of 2010 is very often the creaky, slow and plainful monolith of in 2020. It's not that the original choices were suboptimal: it's that time moves fast in tech, and code needs to constantly evolve to keep in sync.
 
-But not all technical debt is created equal. 
+But not all technical debt is created equal.
 
 Below is a model you may find useful in mapping different parts of your application.
-
 
 ## Technical Debt Accounting Model
 
@@ -34,20 +32,19 @@ This is where your company is at existential risk because of technical debt. You
 
 So equipped with this model for understanding and categorising your technical debt, the questions of implementation remain:
 
-- How do you rigorously measure it to know in which category any given part of your codebase falls? 
+- How do you rigorously measure it to know in which category any given part of your codebase falls?
 
-- How do you know which specific classes are most tightly coupled or more likely to create side effects or most difficult to understand? 
+- How do you know which specific classes are most tightly coupled or more likely to create side effects or most difficult to understand?
 
-- How do you measure the impact, as opposed to the presence of technical debt on your team or company's feature development process? 
+- How do you measure the impact, as opposed to the presence of technical debt on your team or company's feature development process?
 
-- How do you estimate its financial cost? 
+- How do you estimate its financial cost?
 
-- How do you choose which areas of the code to refactor first? 
+- How do you choose which areas of the code to refactor first?
 
 - How do you know when replacement is the only option?
 
 - How do you persuade the business of the need to invest in technical debt?
-
 
 ### Technical debt metrics
 
@@ -63,21 +60,20 @@ These process metrics allow you to put financial estimates to your technical deb
 
 Technical debt also compounds in to security debt, as it almost always entails vulnerabilities that can be tracked and measured via static analysis tools like Sonar, or API testing tools. Finally, technical debt compounds into environmental debt, as you can link speed, requests, data transmission, server intensity, infrastructure configuration and more to higher CO2 emissions, battery and CPU usage, and several downstream and upstream costs. This could have implications to your ESG accounting, your brand values, and your transition to Net Zero.
 
-You can find an illustration of the above framework, metrics and tooling in [a talk I recently gave on the subject](https://ismaelvelasco.dev/technical-debt-the-good-the-bad-and-the-costly).   Indeed, you may have noticed I added a [new Tech Talks section](https://ismaelvelasco.dev/tech-talks). OK, no way you noticed. It has recordings from meetups, conferences and even COP26 on a wide range of software engineering subjects. 
+You can find an illustration of the above framework, metrics and tooling in [a talk I recently gave on the subject](https://ismaelvelasco.dev/technical-debt-the-good-the-bad-and-the-costly). Indeed, you may have noticed I added a [new Tech Talks section](https://ismaelvelasco.dev/tech-talks). OK, no way you noticed. It has recordings from meetups, conferences and even COP26 on a wide range of software engineering subjects.
 
 ## How to get training in Technical Debt Management and Accounting
 
 Also known as shameless plug.
 
-I am genuinely thrilled to have been selected to give a [1 day online workshop on the subject](https://conferences.isaqb.org/software-architecture-gathering/full-program/#advanced-technical-debt-management-the-good-the-bad-and-the-costly) in November by the [International Standard in Training and Certification of Software Architects]((https://isaqb.org/)) - probably the world's foremost software architecture certification body.  
+I am genuinely thrilled to have been selected to give a [1 day online workshop on the subject](https://conferences.isaqb.org/software-architecture-gathering/full-program/#advanced-technical-debt-management-the-good-the-bad-and-the-costly) in November by the [International Standard in Training and Certification of Software Architects](<(https://isaqb.org/)>) - probably the world's foremost software architecture certification body.
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1658420516629/l_QMkLHE8.png align="left")
 
-To be dedicated 9 hours (there's also a follow-on talk on [Modernising Monoliths](https://conferences.isaqb.org/full-program/#modernizing-monoliths-principles-patterns-risks-and-roadmaps)) at one of the world's [leading architecture conferences](https://conferences.isaqb.org/software-architecture-gathering/), at the invitation of such a literal standard setter, feels humbling, exciting and challenging, all at the same time.  The talk above can be taken as a taster for my online workshop, which will actually train you to apply this framework, tools and metrics in practice.
+To be dedicated 9 hours (there's also a follow-on talk on [Modernising Monoliths](https://conferences.isaqb.org/full-program/#modernizing-monoliths-principles-patterns-risks-and-roadmaps)) at one of the world's [leading architecture conferences](https://conferences.isaqb.org/software-architecture-gathering/), at the invitation of such a literal standard setter, feels humbling, exciting and challenging, all at the same time. The talk above can be taken as a taster for my online workshop, which will actually train you to apply this framework, tools and metrics in practice.
 
+If you enjoy it, you might want to [sign up](https://conferences.isaqb.org/software-architecture-gathering/tickets/) for the (online) workshop.
 
-If you enjoy it, you might want to [sign up](https://conferences.isaqb.org/software-architecture-gathering/tickets/) for the (online) workshop. 
-
-Do please share any feedback on this blog post or the talk above, and suggestions for things I should clarify or add ahead of the course. 
+Do please share any feedback on this blog post or the talk above, and suggestions for things I should clarify or add ahead of the course.
 
 Also check out the entire conference and training days, there are some really fantastic talks in the programme!

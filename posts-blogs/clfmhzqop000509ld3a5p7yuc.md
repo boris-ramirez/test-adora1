@@ -5,14 +5,13 @@ cuid: clfmhzqop000509ld3a5p7yuc
 slug: powering-distributed-computing-on-renewable-energy
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/XGAZzyLzn18/upload/c325ec5c10084d552b87f33cb350a4d8.jpeg
 tags: blockchain, bitcoin, sustainability, green-software, green-computing
-
 ---
 
 ## 1\. Electricity grid instability: the blindspot in carbon-aware computing
 
 There is a lot of ongoing work in exploring ways to tie computing jobs to the times and places in the world where the electricity supply runs mostly on renewable energy. This is known as [carbon-aware](https://hackernoon.com/our-code-is-harming-the-planet-we-need-carbon-aware-design-patterns) or carbon-responsive computing. But they tend to be extremely niche and small-scale with some notable exceptions I hope to cover in a later article.
 
-There is however a caveat, which is seldom accounted for in the literature and messaging around carbon aware computing: *powering your computing on renewable energy is not necessarily enough to reduce its CO2 emissions*.
+There is however a caveat, which is seldom accounted for in the literature and messaging around carbon aware computing: _powering your computing on renewable energy is not necessarily enough to reduce its CO2 emissions_.
 
 ![October | 2009 | SciFun](https://tse4.mm.bing.net/th?id=OIP.g4S7q78ZniN3WM_2znjqeQAAAA&pid=Api#centerw150?align="center")
 
@@ -26,10 +25,8 @@ What's more, it is [now understood](https://docs.wind-watch.org/jorgenson2012.pd
 
 Consequently, there are only two ways to ensure that green computing powered by renewables would result in zero direct emissions on the main electricity grid:
 
-* Using **only** surplus renewable electricity that would otherwise be curtailed by the grid.
-    
-* Constructing or contracting for new renewable electricity sources to power additional consumption from computing.
-    
+- Using **only** surplus renewable electricity that would otherwise be curtailed by the grid.
+- Constructing or contracting for new renewable electricity sources to power additional consumption from computing.
 
 This is one key reason why within the field of carbon-aware computing research is underway on ways to target specifically stranded renewable energy, that is, energy that peaks when the sun decides to shine and clouds to part and winds to blow, at exactly the times when energy is not being consumed in sufficient volume by the grid. At those times the excess energy is not useable and could even lead to instability in the electricity grid, so it becomes curtailed and essentially thrown away and wasted. If we can target our computing jobs at that wasted renewable energy, we would help reduce digital emissions, stabilise the grid and avoid perverse effects from competing for a limited supply of available renewable energy with other users.
 
@@ -59,10 +56,8 @@ Because computing can be electricity-intensive, because it can be located anywhe
 
 I gave examples of grid participation schemes in Texas whereby Bitcoin miners are able to mine intensively (i.e. run intensive computing jobs) outside of peak times, and are paid by the tax-payer to stop mining/computing (and consuming electricity) when local grid demand is high. There are two types of such grid participation schemes around Bitcoin, reviewed in detail in [a recent Masters' thesis](https://nordopen.nord.no/nord-xmlui/bitstream/handle/11250/2836156/Mellerud.pdf):
 
-* Bitcoin miners acting as "load resources" in conventional demand response programs, enabling them to participate in [day-ahead markets](https://www.next-kraftwerke.com/knowledge/day-ahead-trading-electricity). This helps with electricity demand, but does not guarantee that the energy mix powering Bitcoin mining is renewable. This is the larger share in the Texas experiment.
-    
-* Price-responsive Bitcoin mining, where miners are located behind-the-meter (BTM) directly at renewable power plants, mining when the market price for renewable electricity is low and refraining from mining when it is high. This green computing pattern is mostly based in West Texas, and this is the pattern that is most worthy of study by the wider green computing movement.
-    
+- Bitcoin miners acting as "load resources" in conventional demand response programs, enabling them to participate in [day-ahead markets](https://www.next-kraftwerke.com/knowledge/day-ahead-trading-electricity). This helps with electricity demand, but does not guarantee that the energy mix powering Bitcoin mining is renewable. This is the larger share in the Texas experiment.
+- Price-responsive Bitcoin mining, where miners are located behind-the-meter (BTM) directly at renewable power plants, mining when the market price for renewable electricity is low and refraining from mining when it is high. This green computing pattern is mostly based in West Texas, and this is the pattern that is most worthy of study by the wider green computing movement.
 
 One crucial thing the Texas experience demonstrates is that with the right incentives, [compute equipment can be co-located with renewable energy sources at scale](https://arxiv.org/pdf/2207.02428.pdf), with miners flocking to Texas to carry out a gigantic amount of distributed computing powered exclusively by renewable energy. Close examination of the Texas model, introduced in my previous post, provides both some fantastic innovations to potentially emulate across distributed computing use cases, and also some extremely serious pitfalls to design for and avoid.
 
@@ -71,7 +66,7 @@ There is yet another complementary approach to carbon-aware computing that Bitco
 The largest-scale experiment by far in using distributed electricity generation to power distributed computing was Bitcoin China between 2014-2021:
 
 > When the first group of bitcoin miners arrived in Sichuan around 2014, the sites they chose for bitcoin factories were near small hydropower stations that did not connect to the national power network... For the bitcoin miners, the power price of such offline stations is lower than the power price sold online... The arrival of the bitcoin factory ...made some small hydropower stations profitable.
-> 
+>
 > [Addiction to Power: Infrastructure and the making of Bitcoin mining zones in China and the United States](https://www.societyandspace.org/articles/addiction-to-power-infrastructure-and-the-making-of-bitcoin-mining-zones-in-china-and-the-united-states)
 
 At its peak, China dominated 75% of the global Bitcoin mining infrastructure, and in the summer months when rain is plentiful, most of this eye-watering amount of distributed computing was powered by these small renewable hydroelectric plants. China’s winters are arid however, and solar and wind farms don’t produce a steady enough supply to run mining operations around the clock, so miners often turned to coal to compensate, negating any environmental gains from the summer. This [put China's trajectory toward Net Zero in danger](https://www.nature.com/articles/s41467-021-22256-3), leading, together with grid load and economic issues, to the 2021 crackdown that finally stopped the majority of Bitcoin mining in China.
@@ -97,9 +92,9 @@ Solar, wind and hydroelectric energy are, for all intents and purposes, endlessl
 Failure to account for this is a blind-spot that extends beyond green computing to the green tech movement as a whole.
 
 > The results show that proven reserves and, in specific cases, resources of several metals are insufficient to build a renewable energy system at the predicted level of global energy demand by 2050...
-> 
+>
 > We show here that even if the energy system was fully renewable, supply constraints on several elements other than carbon would still compel us to reduce our energy demand.
-> 
+>
 > [Enough Metals? Resource Constraints to Supply a Fully Renewable Energy System](https://www.mdpi.com/2079-9276/8/1/29/htm)
 
 Green energy is technically much greener than fossil fuel energy and therefore a key tool in our battle against climate change, but at scale, it is not altogether renewable: it merely shifts the supply chain challenges from fossil fuels to minerals and metals.

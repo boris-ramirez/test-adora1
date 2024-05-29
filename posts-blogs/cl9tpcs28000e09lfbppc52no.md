@@ -5,7 +5,6 @@ cuid: cl9tpcs28000e09lfbppc52no
 slug: fact-check-how-big-is-wordpress
 cover: https://cdn.hashnode.com/res/hashnode/image/unsplash/JKUTrJ4vK00/upload/v1667034037077/UBoHM4w6w.jpeg
 tags: statistics, wordpress, web, webdev, cms
-
 ---
 
 I can think of marketing, economic, even historical reasons to care about the current spread of WordPress, given its prominence in the [eye-wateringly vast collection of content](https://www.tonergiant.co.uk/blog/2017/06/if-you-printed-the-internet/) known as the Worldwide Web.
@@ -50,7 +49,7 @@ I have not been able to find the original source of this claim, but I have been 
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661792220642/hA-FuGJeh.png align="left")
 
-We can see from this and other 2020 blogs that 1.3 billion website figure comes from the [January 2020 Netcraft Server Survey](https://news.netcraft.com/archives/category/web-server-survey/page/6/). This was already a misunderstanding of the numbers, when in reality, the Netcraft survey estimated the number of active websites at a fraction of that (c. 2 million), with the rest of the web (adding up to the 1.3 billion) considered "dead" by them. I cover this in my [blog post on the size of the Web](Web%5D(ismaelvelasco.dev/how-big-is-the-worldwide-web)).
+We can see from this and other 2020 blogs that 1.3 billion website figure comes from the [January 2020 Netcraft Server Survey](https://news.netcraft.com/archives/category/web-server-survey/page/6/). This was already a misunderstanding of the numbers, when in reality, the Netcraft survey estimated the number of active websites at a fraction of that (c. 2 million), with the rest of the web (adding up to the 1.3 billion) considered "dead" by them. I cover this in my [blog post on the size of the Web](<Web%5D(ismaelvelasco.dev/how-big-is-the-worldwide-web)>).
 
 While the 35% figure comes, as I noted, originally from W3techs.com. The 455 million WordPress websites is the result of applying the W3techs percentage to Netcraft's 1.3 billion gross number (active and inactive).
 
@@ -58,7 +57,7 @@ The problem is that this involves comparing apples and pears, amounting to a sam
 
 4 million of the highest ranking WordPress websites is still hugely impressive and impactful, but it is orders of magnitude less than 455 million WordPress websites. This misunderstanding (well beyond conventional frippery) has memefied and become even more de-anchored from fact as time has gone on. Both the Netcraft numbers and the W3Techs percentages have changed in the years since the 455 million figure was coined, but the number 455 million number remains constant, and cascades through the marketing claims of secondary products. As an example, a WordPress plugin claimed in May 2022 that Dogecoin (because of course) can now be accepted by 455 million websites:
 
-%[https://twitter.com/cb_doge/status/1522632242018750464?t=2GjpS9XmlPSEGXOuNwi_PQ&s=19] 
+%[https://twitter.com/cb_doge/status/1522632242018750464?t=2GjpS9XmlPSEGXOuNwi_PQ&s=19]
 
 For anyone reading this post, it should be clear that the estimate of 455 million WordPress websites should be consigned to the bonfire of the vanities.
 
@@ -96,15 +95,11 @@ A recap of [my conclusions](%5Bhttps://ismaelvelasco.dev/how-big-is-the-worldwid
 
 > Triangulating the datapoints from Netcraft, Internet Live Stats, BuiltWith, Domainnamesstat and Cesys, this is my own best estimate:
 
-> * 1.9 billion internet services running on IPv4 addresses
->     
+> - 1.9 billion internet services running on IPv4 addresses
 
-* 706 million hosts (200 million physical, 406 million virtual)
-    
-* 614 million registered domains
-    
-* 350 million resolvable domains (active websites)
-    
+- 706 million hosts (200 million physical, 406 million virtual)
+- 614 million registered domains
+- 350 million resolvable domains (active websites)
 
 Accordingly, adopting the BuiltWith numbers as the best-in-class estimate of live WordPress websites, WordPress accounts for an estimated 10% of all websites.
 
@@ -128,6 +123,5 @@ This is half the standard 40% claim, but it is still huge to say WordPress power
 
 Taking the above findings we can conclude that:
 
-* A significant, as yet unquantified proportion of the 350 million active websites are meaningless placeholders or spam, constituting "the meaningless web".
-    
-* If we take the size of the "meaningless web" to be around c.50%, 175 million websites, or around half the "active web", there are approximately 38 million active WordPress websites, accounting for (very) roughly 1 in 5 (22%) of meaningful websites in the world.
+- A significant, as yet unquantified proportion of the 350 million active websites are meaningless placeholders or spam, constituting "the meaningless web".
+- If we take the size of the "meaningless web" to be around c.50%, 175 million websites, or around half the "active web", there are approximately 38 million active WordPress websites, accounting for (very) roughly 1 in 5 (22%) of meaningful websites in the world.

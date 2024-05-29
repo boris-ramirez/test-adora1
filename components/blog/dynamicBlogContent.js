@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const thumbnailLink = document.createElement("a");
           thumbnailLink.href = "#";
           thumbnailLink.addEventListener("click", () =>
-            fileUpload(`./posts-blogs/${blog.file}`)
+            fileUpload(`./posts-blogs/${blog.file}`),
           );
 
           const thumbnailImage = document.createElement("img");

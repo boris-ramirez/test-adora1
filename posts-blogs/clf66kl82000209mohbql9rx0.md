@@ -5,7 +5,6 @@ cuid: clf66kl82000209mohbql9rx0
 slug: bitcoin-environmental-impact
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1678514040326/970d51d1-e359-4874-b3f4-3ea47f132fc1.jpeg
 tags: bitcoin-green-software-green-computing-sustainability
-
 ---
 
 In their extreme positions, all three of these assessments are misleading, and all three contain some nuggets of truth. Bitcoin is the most visible example of hyberbolic claims both for and against, especially in the environmental arena.
@@ -38,23 +37,18 @@ More emphatic than Bitcoin's own argument, even if building on arguments seeded 
 
 The argument goes like this:
 
-* There is a huge amount of unused (stranded) renewable energy being thrown away (curtailed) and going to waste.
-    
-* Sunshine and clouds are unpredictable, so solar energy might become suddenly available at times of very low domestic use, creating surpluses that cannot be stored, and therefore become stranded, and wasted.
-    
-* Because Bitcoin mining hardware can power down when energy is being consumed by the electricity grid, and power up when it is about to be curtailed, Bitcoin mining could run entirely on currently wasted renewable energy, switching off at peak times, meaning it wouldn't contribute new emissions.
-    
+- There is a huge amount of unused (stranded) renewable energy being thrown away (curtailed) and going to waste.
+- Sunshine and clouds are unpredictable, so solar energy might become suddenly available at times of very low domestic use, creating surpluses that cannot be stored, and therefore become stranded, and wasted.
+- Because Bitcoin mining hardware can power down when energy is being consumed by the electricity grid, and power up when it is about to be curtailed, Bitcoin mining could run entirely on currently wasted renewable energy, switching off at peak times, meaning it wouldn't contribute new emissions.
 
 ![alt_text](https://learn.greensoftware.foundation/assets/images/09_marginal_CI-6378f6863af85491188380d14cb148b0.png#centerw150 align="center")
 
-* Bitcoin renewable electricity demand would generate financial incentives to accelerate investment in green electricity infrastructure, improving the electricity grid and accelerating the green energy transition.
-    
-* Additionally, methane ([an acutely terrible greenhouse gas](https://www.unep.org/explore-topics/energy/facts-about-methane)), is also regularly [flared](https://www.worldbank.org/en/programs/gasflaringreduction/gas-flaring-explained) from landfills, abandoned wells, and oil and gas operations. Potter points out that such surplus methane could instead be turned into electricity to be consumed by co-located miners, turning Bitcoin into a carbon capture tool preventing the methane from getting trapped in the atmosphere.
-    
+- Bitcoin renewable electricity demand would generate financial incentives to accelerate investment in green electricity infrastructure, improving the electricity grid and accelerating the green energy transition.
+- Additionally, methane ([an acutely terrible greenhouse gas](https://www.unep.org/explore-topics/energy/facts-about-methane)), is also regularly [flared](https://www.worldbank.org/en/programs/gasflaringreduction/gas-flaring-explained) from landfills, abandoned wells, and oil and gas operations. Potter points out that such surplus methane could instead be turned into electricity to be consumed by co-located miners, turning Bitcoin into a carbon capture tool preventing the methane from getting trapped in the atmosphere.
 
 On the face of it, Porter's article offers an excellent application of carbon-aware computing, and specifically time, demand and location shifting patterns. Such approaches are very much the cutting edge of current efforts to green the environmental impact of computing, and the Adora Foundation's Incubation Lab is supporting a range of fantastic carbon aware projects in this area, from machine learning to cloud computing, and from APIs to UI component libraries.
 
-There are however a few caveats to this carbon-aware, energy-responsive, carbon-capturing Bitcoin utopia. The premise that Bitcoin ***could be*** good for the energy grid and good for the environment, even if accepted, does not support the title of the article, which claims that Bitcoin already ***is*** good for the energy grid and the environment.
+There are however a few caveats to this carbon-aware, energy-responsive, carbon-capturing Bitcoin utopia. The premise that Bitcoin **_could be_** good for the energy grid and good for the environment, even if accepted, does not support the title of the article, which claims that Bitcoin already **_is_** good for the energy grid and the environment.
 
 Porter refers to an example of voluntary Bitcoin mining suspension at peak grid usage times in exchange for energy credits miners can redeem at non-peak times. This is part of a large scale experiment in using Bitcoin as a tool for grid stabilisation in the face of unpredictable renewable energy availability.
 
@@ -62,10 +56,8 @@ To ensure safe operation, voltage, frequency, and other electrical aspects of th
 
 Porter's example is one such demand response solution, with Bitcoin being used to stabilise the grid. [There are two types of such schemes](https://nordopen.nord.no/nord-xmlui/bitstream/handle/11250/2836156/Mellerud.pdf):
 
-* Price-responsive Bitcoin mining, where miners are located behind-the-meter (BTM) directly at renewable power plants, mining when the market price for renewable electricity is low and refraining from mining when it is high.
-    
-* Bitcoin miners acting as "load resources" in conventional demand response programs, enabling them to participate in [day-ahead markets](https://www.next-kraftwerke.com/knowledge/day-ahead-trading-electricity). This helps with electricity demand, but does not guarantee that the energy mix powering Bitcoin mining is renewable. Porter does not mention this dimension, which has the larger share in the Texas experiment.
-    
+- Price-responsive Bitcoin mining, where miners are located behind-the-meter (BTM) directly at renewable power plants, mining when the market price for renewable electricity is low and refraining from mining when it is high.
+- Bitcoin miners acting as "load resources" in conventional demand response programs, enabling them to participate in [day-ahead markets](https://www.next-kraftwerke.com/knowledge/day-ahead-trading-electricity). This helps with electricity demand, but does not guarantee that the energy mix powering Bitcoin mining is renewable. Porter does not mention this dimension, which has the larger share in the Texas experiment.
 
 Let us take a scenario where all miners operate in a price-responsive, renewable energy scheme. Even in this scenario, the Texas Bitcoin miners reduce peak time mining, but maximise non-peak time mining, adding to net energy demand overall, placing the entire grid under strain, raising electricity costs. These and other issues have led to an ongoing [Cogressional investigation](https://www.warren.senate.gov/imo/media/doc/Letter%20to%20ERCOT%20re%20Cryptomining.pdf).
 
@@ -80,7 +72,7 @@ The same kind of issues arise when considering Bitcoin as a methane emissions re
 Potter's methane combustion use case, building on [research by ESG-oriented Bitcoin promoter Daniel Batten](https://batcoinz.com/50-landfills-mining-bitcoin-a-zero-emission-bitcoin-network/), also looks on the face of it like a promising carbon capture solution but it's very far from guaranteed. The White House's moderate stance on the subject rings true:
 
 > Crypto-asset mining that installs equipment to use vented methane to generate electricity for operations is more likely to help rather than hinder U.S. climate objectives. However, unless the CO2 is captured and stored, using vented methane at oil and gas wells will still generate CO2 emissions and contribute to climate change. Using vented or flared methane for crypto-asset mining must also be assessed against other uses for this methane, such as hydrogen production or transporting the methane via pipeline to end-users.
-> 
+>
 > [Climate and Energy Implications of Crypto-Assets in the United States](https://www.whitehouse.gov/wp-content/uploads/2022/09/09-2022-Crypto-Assets-and-Climate-Report.pdf)
 
 Environmentally minded Bitcoin miners could indeed adopt and adapt this approach with potentially beneficial impacts. Meanwhile, environmentally indifferent Bitcoin entrepreneurs don't have any intrinsic incentives to distinguish between green and non-green energy. Bitcoin mining could create perverse incentives that end up stimulating methane and flaring demand, such as intentionally flaring methane to earn rewards.
@@ -119,10 +111,8 @@ One caveat in looking at the CBECI figures is that they represent credible ballp
 
 Having said that, these are the figures for Bitcoin's direct energy consumption:
 
-* **The CBECI estimates Bitcoin's** [**annualised electricty consumption**](https://ccaf.io/cbeci/index) **at 120 TWh.**
-    
-* **It also estimates Bitcoin's** [**annualised greenhouse gas emissions**](https://ccaf.io/cbeci/ghg/index) **at 60 metric tons of CO2.**
-    
+- **The CBECI estimates Bitcoin's** [**annualised electricty consumption**](https://ccaf.io/cbeci/index) **at 120 TWh.**
+- **It also estimates Bitcoin's** [**annualised greenhouse gas emissions**](https://ccaf.io/cbeci/ghg/index) **at 60 metric tons of CO2.**
 
 Together with Kohler and Pizzol's 2019 LCA study, the CBECI could be used to make a start on scopes 1-3 estimates for Bitcoin, although this has yet to be undertaken. This would be a valuable area for future research.
 
@@ -135,15 +125,13 @@ Beyond any direct electricity consumption measure at any given time, assessing t
 In Proof-of-Work consensus algorithms, energy voraciousness is a feature, not a bug. As one industry participant expressed it at Intel's recent [Web3 and Sustainabilit](https://project.linuxfoundation.org/hubfs/LF%20Research/Intel%20Web3%20and%20Sustainability%20-%20Report.pdf)y consultation with various blockchain companies:
 
 > “We’re very concerned about digital assets like Bitcoin that are wasteful by design. The incentives baked into the code call for using more and more electricity, the more popular they become, not less and less.”
-> 
+>
 > [Web3 and Sustainabilit](https://project.linuxfoundation.org/hubfs/LF%20Research/Intel%20Web3%20and%20Sustainability%20-%20Report.pdf)y
 
 Indeed, there are fundamental financial and security incentives baked into Proof of Work systems that make energy consumption an indicator of the blockchain's overall profitability and safety.
 
-* As a bitcoin miner, the more mining equipment you deploy, the more energy you consume, and the greater your financial profits. There are moderating factors, but the principle holds.
-    
-* As an investor, the more computation is taking place in the network, the more energy is consumed, and the more secure your assets are.
-    
+- As a bitcoin miner, the more mining equipment you deploy, the more energy you consume, and the greater your financial profits. There are moderating factors, but the principle holds.
+- As an investor, the more computation is taking place in the network, the more energy is consumed, and the more secure your assets are.
 
 Energy consumption is thus a simplified but powerful proxy for Bitcoin's overall profitability and security. Which explains why constant improvements to Bitcoin's energy efficiency have failed to diminish net electricity consumption and emissions. On the contrary, as mining hardware has become more and more energy efficient, energy consumption has grown in a pretty reciprocal curve.
 
@@ -155,7 +143,7 @@ This is to be expected. In a system as heavily incentivised as Bitcoin, efficien
 
 ### How significant is Bitcoin's environmental impact?
 
-The facts are clear. At approximately 120 TWh and 60 MtCO2e, per year Bitcoin ***is*** environmentally costly. More so than its most ardent evangelists would claim, less so than its most ardent detractors would warn.
+The facts are clear. At approximately 120 TWh and 60 MtCO2e, per year Bitcoin **_is_** environmentally costly. More so than its most ardent evangelists would claim, less so than its most ardent detractors would warn.
 
 The [following comparison](https://ccaf.io/cbeci/index/comparisons) by the CBECI authors is illustrative:
 
@@ -174,7 +162,7 @@ If we take CBCI's much less rigorous emissions estimates as broadly credible, th
 Less commonly discussed are environmental impacts beyond CO2. As the most recent [White House report on the climate implications of crypto-assets](https://www.whitehouse.gov/wp-content/uploads/2022/09/09-2022-Crypto-Assets-and-Climate-Report.pdf) in the United States summarises:
 
 > Besides purchased grid electricity, crypto-asset mining operations can also cause local noise and water impacts, electronic waste, air and other pollution from any direct usage of fossil-fired electricity, and additional air, water, and waste impacts associated with all grid electricity usage. These local impacts can exacerbate environmental justice issues for neighboring communities, which are often already burdened with other pollutants, heat, traffic, or noise.
-> 
+>
 > [Climate and Energy Implications of Crypto-Assets in the United States](https://www.whitehouse.gov/wp-content/uploads/2022/09/09-2022-Crypto-Assets-and-Climate-Report.pdf)
 
 ## Is Bitcoin an environmental catastrophe?
@@ -195,14 +183,10 @@ But as emphasised earlier, Bitcoin's electricity consumption cannot be approache
 
 [Pizol et al](https://www.frontiersin.org/articles/10.3389/frsus.2020.611593/full) modelled 4 scenarios for Bitcoin's future Global Warming Impact:
 
-* a linear (business as usual) scenario.
-    
-* a location-sensitive scenario where new mining facilities are only installed in more competitive places with lower energy prices. **The Global Warming Impact rose by 31%**
-    
-* an equipment-sensitive scenario, where only more efficient mining equipment was used in new bitcoin mining projects. **The Global Warming Impact decreased by 48%**
-    
-* a scenario where new bitcoin projects grew only in cheaper locations while using only the latest, more efficient mining equipment. **The Global Warming Impact decreased by 32%**
-    
+- a linear (business as usual) scenario.
+- a location-sensitive scenario where new mining facilities are only installed in more competitive places with lower energy prices. **The Global Warming Impact rose by 31%**
+- an equipment-sensitive scenario, where only more efficient mining equipment was used in new bitcoin mining projects. **The Global Warming Impact decreased by 48%**
+- a scenario where new bitcoin projects grew only in cheaper locations while using only the latest, more efficient mining equipment. **The Global Warming Impact decreased by 32%**
 
 This was used to illustrate how misleading it can be to create linear prediction models, where Bitcoin network growth equates to emissions growth in a constant manner. There are scenarios where Bitcoin network growth could result in both dramatically greater negative impacts, but also dramatically greener overall impacts. The model does not account for Bitcoin's huge sensitivity to non-environmental factors, like national regulatory climate, which would affect mining location and hence emissions; massive Bitcoin price fluctuations, and their impact on demand, etc.
 
@@ -214,12 +198,9 @@ Mining equipment efficiency gains have been touted as a moderating factor, but t
 
 Which is to say:
 
-* If you believe Bitcoin will be massively successful, massively adopted, and transform the way society structures its financial life and much beside... then yes, Bitcoin is likely poised to be environmentally catastrophic.
-    
-* If you believe Bitcoin is an over-hyped artefact of the pilot stage of blockchain innovation, a gambler's dream (or addiction) that will be left behind by different, better tech and future regulation, then Bitcoin is indeed a massive, painful, costly environmental waste: but not an environmental disaster.
-    
-* If you think the answer lies between, for instance predicting that the cycle of peaks and troths will continue, and that it may eventually be left behind, but that it won't be quick, and it will probably be much bigger by then: then Bitcoin merits serious worry and environmental advocacy, within the Bitcoin community and in the regulatory sphere.
-    
+- If you believe Bitcoin will be massively successful, massively adopted, and transform the way society structures its financial life and much beside... then yes, Bitcoin is likely poised to be environmentally catastrophic.
+- If you believe Bitcoin is an over-hyped artefact of the pilot stage of blockchain innovation, a gambler's dream (or addiction) that will be left behind by different, better tech and future regulation, then Bitcoin is indeed a massive, painful, costly environmental waste: but not an environmental disaster.
+- If you think the answer lies between, for instance predicting that the cycle of peaks and troths will continue, and that it may eventually be left behind, but that it won't be quick, and it will probably be much bigger by then: then Bitcoin merits serious worry and environmental advocacy, within the Bitcoin community and in the regulatory sphere.
 
 ## Is Bitcoin worth the environmental impact?
 
@@ -229,16 +210,11 @@ Hardly a ringing justification for its attributable ~13,000 deaths a year from a
 
 Elaborating on the above, the ethical case for Bitcoin as discussed by its advocates may be summarised as follows:
 
-* **Financial inclusion:** Bitcoin can provide a way for individuals who do not have access to traditional banking and financial services to participate in the global economy. By enabling peer-to-peer transactions without the need for a financial intermediary, Bitcoin can provide greater financial inclusion and access for marginalized communities. It can help reduce the cost and complexity of international remittances, which are a critical source of income for many people in developing countries. Bitcoin can also enable micropayments which are not economically feasible with traditional payment systems. This has implications in contexts of extreme poverty or financial exclusion while opening up new opportunities for monetisation and revenue streams in the informal economy and sectors like the arts.
-    
-* **Financial stability, resilience and recovery:** Bitcoin shares many of the same characteristics as gold, such as scarcity, durability, and divisibility, so it can provide a store of value that is resistant to inflation and economic volatility. This has led to its widespread use in contexts of mainstream financial collapse, as a hedge and safe haven.
-    
-* **Financial freedom and autonomy:** as a decentralized digital currency Bitcoin operates independently of traditional financial systems and government control. This independence and decentralization can in theory provide a greater degree of financial autonomy for individuals and communities, and help to protect against censorship and government interference.
-    
-* **Incentivising the green transition**: Bitcoin mining can provide an economic incentive for investment in renewable energy sources, such as solar or wind power, which can help to reduce greenhouse gas emissions and promote sustainability. It can help address the issue of massive renewable energy curtailment and waste, mitigate impacts of fossil fuel generation, and be deployed as a carbon capture mechanism. As [summarised by Daniel Batten:](https://batcoinz.com/new-insights-on-bitcoin-mining-and-sustainability/)
-    
-* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678665887810/0c51cdcc-e4bf-4147-bb8b-5adfae387cef.png#centerw150 align="center")
-    
+- **Financial inclusion:** Bitcoin can provide a way for individuals who do not have access to traditional banking and financial services to participate in the global economy. By enabling peer-to-peer transactions without the need for a financial intermediary, Bitcoin can provide greater financial inclusion and access for marginalized communities. It can help reduce the cost and complexity of international remittances, which are a critical source of income for many people in developing countries. Bitcoin can also enable micropayments which are not economically feasible with traditional payment systems. This has implications in contexts of extreme poverty or financial exclusion while opening up new opportunities for monetisation and revenue streams in the informal economy and sectors like the arts.
+- **Financial stability, resilience and recovery:** Bitcoin shares many of the same characteristics as gold, such as scarcity, durability, and divisibility, so it can provide a store of value that is resistant to inflation and economic volatility. This has led to its widespread use in contexts of mainstream financial collapse, as a hedge and safe haven.
+- **Financial freedom and autonomy:** as a decentralized digital currency Bitcoin operates independently of traditional financial systems and government control. This independence and decentralization can in theory provide a greater degree of financial autonomy for individuals and communities, and help to protect against censorship and government interference.
+- **Incentivising the green transition**: Bitcoin mining can provide an economic incentive for investment in renewable energy sources, such as solar or wind power, which can help to reduce greenhouse gas emissions and promote sustainability. It can help address the issue of massive renewable energy curtailment and waste, mitigate impacts of fossil fuel generation, and be deployed as a carbon capture mechanism. As [summarised by Daniel Batten:](https://batcoinz.com/new-insights-on-bitcoin-mining-and-sustainability/)
+- ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678665887810/0c51cdcc-e4bf-4147-bb8b-5adfae387cef.png#centerw150 align="center")
 
 As we have seen already, there are many nuances to each of these claims, but for the sake of argument, let us grant every one of the above benefits. If one could moderate or exclude fossil-fuel-powered Bitcoin mining, ensuring Bitcoin mining runs on surplus renewable energy, or leverages non-residual renewable energy to grow net renewable energy capacity for large ultimate environmental rewards, Bitcoin could be a laudably green technology.
 
@@ -277,7 +253,6 @@ When taking all factors into account, the only advantage of Bitcoin is its first
 In closing, we can derive four key insights from the current state of the art:
 
 1. **Bitcoin is not currently the environmental catastrophe its most vociferous detractors portray.**
-    
 
 2\. **It is nevertheless environmentally costly and seriously impactful**; carries perverse incentives that hardwire energy hunger into its model in an unsustainable way that is not solved by renewables; dedicates almost all its electricity to wasteful computation; and is a poorer instrument in the round to achieve its recognised potential societal benefits than many existing alternatives.
 

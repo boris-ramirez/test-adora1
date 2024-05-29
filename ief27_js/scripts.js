@@ -587,35 +587,35 @@ if (
           t(this.timelineItems[1].textContent) -
           t(this.timelineItems[0].textContent)),
         (this.topInfoElement = this.element.getElementsByClassName(
-          "cd-schedule__top-info"
+          "cd-schedule__top-info",
         )[0]),
         (this.singleEvents =
           this.element.getElementsByClassName("cd-schedule__event")),
         (this.modal =
           this.element.getElementsByClassName("cd-schedule-modal")[0]),
         (this.modalHeader = this.element.getElementsByClassName(
-          "cd-schedule-modal__header"
+          "cd-schedule-modal__header",
         )[0]),
         (this.modalHeaderBg = this.element.getElementsByClassName(
-          "cd-schedule-modal__header-bg"
+          "cd-schedule-modal__header-bg",
         )[0]),
         (this.modalBody = this.element.getElementsByClassName(
-          "cd-schedule-modal__body"
+          "cd-schedule-modal__body",
         )[0]),
         (this.modalBodyBg = this.element.getElementsByClassName(
-          "cd-schedule-modal__body-bg"
+          "cd-schedule-modal__body-bg",
         )[0]),
         (this.modalClose = this.modal.getElementsByClassName(
-          "cd-schedule-modal__close"
+          "cd-schedule-modal__close",
         )[0]),
         (this.modalDate = this.modal.getElementsByClassName(
-          "cd-schedule-modal__date"
+          "cd-schedule-modal__date",
         )[0]),
         (this.modalEventName = this.modal.getElementsByClassName(
-          "cd-schedule-modal__name"
+          "cd-schedule-modal__name",
         )[0]),
         (this.coverLayer = this.element.getElementsByClassName(
-          "cd-schedule__cover-layer"
+          "cd-schedule__cover-layer",
         )[0]),
         (this.modalMaxWidth = 800),
         (this.modalMaxHeight = 480),
@@ -640,14 +640,14 @@ if (
           ? "mobile" === e && t
             ? (Util.removeClass(
                 this.element,
-                "cd-schedule--loading js-schedule-loaded"
+                "cd-schedule--loading js-schedule-loaded",
               ),
               this.resetEventsStyle(),
               n && this.checkEventModal())
             : "desktop" === e && n
-            ? (this.checkEventModal(n),
-              Util.removeClass(this.element, "cd-schedule--loading"))
-            : Util.removeClass(this.element, "cd-schedule--loading")
+              ? (this.checkEventModal(n),
+                Util.removeClass(this.element, "cd-schedule--loading"))
+              : Util.removeClass(this.element, "cd-schedule--loading")
           : (Util.addClass(this.element, "js-schedule-loaded"),
             this.placeEvents(),
             n && this.checkEventModal(n));
@@ -670,7 +670,7 @@ if (
             r = (e * o) / this.timelineUnitDuration;
           this.singleEvents[n].setAttribute(
             "style",
-            "top: " + (s - 1) + "px; height: " + (r + 1) + "px"
+            "top: " + (s - 1) + "px; height: " + (r + 1) + "px",
           );
         }
         Util.removeClass(this.element, "cd-schedule--loading");
@@ -738,7 +738,7 @@ if (
               u +
               "px) translateX(" +
               m +
-              "px)"
+              "px)",
           ),
             t.modalHeader.setAttribute("style", "width:" + r + "px"),
             t.modalBody.setAttribute("style", "margin-left:" + r + "px"),
@@ -750,7 +750,7 @@ if (
                 g +
                 ") scaleX(" +
                 p +
-                ")"
+                ")",
             ),
             t.modalHeaderBg.setAttribute(
               "style",
@@ -760,13 +760,13 @@ if (
                 r +
                 "px; transform: scaleY(" +
                 g +
-                ")"
+                ")",
             ),
             t.modalHeaderBg.addEventListener("transitionend", function e() {
               (t.animating = !1),
                 Util.addClass(
                   t.modal,
-                  "cd-schedule-modal--animation-completed"
+                  "cd-schedule-modal--animation-completed",
                 ),
                 t.modalHeaderBg.removeEventListener("transitionend", e);
             });
@@ -778,7 +778,7 @@ if (
         document.body.classList.remove("stop-scrolling");
         var t = e.mq(),
           n = e.element.getElementsByClassName(
-            "cd-schedule__event--selected"
+            "cd-schedule__event--selected",
           )[0],
           a = n.getElementsByTagName("a")[0];
         if (((this.animating = !0), "mobile" === t)) {
@@ -801,7 +801,7 @@ if (
             m = o - c;
           Util.removeClass(
             this.modal,
-            "cd-schedule-modal--open cd-schedule-modal--animation-completed"
+            "cd-schedule-modal--open cd-schedule-modal--animation-completed",
           ),
             (e.modal.style.width = l + "px"),
             (e.modal.style.height = r + "px"),
@@ -844,7 +844,7 @@ if (
         } else if ("desktop" === n && e) {
           Util.addClass(
             t.modal,
-            "cd-schedule-modal--no-transition cd-schedule-modal--animation-completed"
+            "cd-schedule-modal--no-transition cd-schedule-modal--animation-completed",
           );
           var a = t.element
               .getElementsByClassName("cd-schedule__event--selected")[0]
@@ -869,7 +869,7 @@ if (
                 c +
                 "px;width:" +
                 d +
-                "px;transform: translateY(0) translateX(0)"
+                "px;transform: translateY(0) translateX(0)",
             ),
               (t.modalBodyBg.style.height = c + "px"),
               (t.modalBodyBg.style.transform = "scaleY(1) scaleX(" + m + ")"),
@@ -884,7 +884,7 @@ if (
                   s +
                   "px; transform:scaleY(" +
                   h +
-                  ");"
+                  ");",
               );
           }, 10),
             window.setTimeout(function () {
@@ -908,7 +908,7 @@ if (
           .map((e) => "<h6>" + e.title + "</h6><p>" + e.panelist + "</p>")
           .join("")}\n\t\t\t</div>\n\t\t`;
         (this.modal.getElementsByClassName(
-          "cd-schedule-modal__event-info"
+          "cd-schedule-modal__event-info",
         )[0].innerHTML = t),
           Util.addClass(this.modal, "cd-schedule-modal--content-loaded");
       }),
@@ -996,7 +996,7 @@ console.log(showPresenterInfo("e"))(
     (modal.style.display = "none"),
       modalContent.classList.remove("fadeInUp"),
       document.body.classList.remove("stop-scrolling");
-  })
+  }),
 ),
   (window.onclick = function (e) {
     e.target === modal &&

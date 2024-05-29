@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Imágenes con alineación
       const imageMatch = line.match(
-        /!\[(.*?)\]\((.*?)\)\s*(align="left"|align="right"|align="center")?/
+        /!\[(.*?)\]\((.*?)\)\s*(align="left"|align="right"|align="center")?/,
       );
       if (imageMatch) {
         const [, alt, srcInfo] = imageMatch;
