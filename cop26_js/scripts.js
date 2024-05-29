@@ -563,11 +563,11 @@ Util.moveFocus = function (e) {
 Util.getIndexInArray = function (e, t) {
   return Array.prototype.indexOf.call(e, t);
 };
-
 Util.cssSupports = function (property, value) {
   // Verificar si CSS.supports está disponible
-  if (typeof window.CSS !== "undefined" && typeof CSS.supports === "function") {
-    return CSS.supports(property, value);
+  const css = window.CSS;
+  if (css && typeof css.supports === "function") {
+    return css.supports(property, value);
   } else {
     // Alternativa si CSS.supports no está disponible
     return (
@@ -578,7 +578,7 @@ Util.cssSupports = function (property, value) {
   }
 };
 
-if (typeof Element !== "undefined") {
+if (typeof window !== "undefined" && typeof window.Element !== "undefined") {
   Element.prototype.matches =
     Element.prototype.matches ||
     Element.prototype.msMatchesSelector ||
