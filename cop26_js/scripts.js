@@ -511,7 +511,9 @@ Util.setHeight = function (e, t, n, a, i) {
   const o = t - e;
   let s = null;
   const r = function (t) {
-    if (!s) s = t;
+    if (!s) {
+      s = t;
+    }
     const l = t - s;
     const d = parseInt((l / a) * o + e);
     n.setAttribute("style", "height:" + d + "px;");
@@ -529,9 +531,13 @@ Util.scrollTo = function (e, t, n) {
   const a = window.scrollY || document.documentElement.scrollTop;
   let i = null;
   const o = function (s) {
-    if (!i) i = s;
+    if (!i) {
+      i = s;
+    }
     let r = s - i;
-    if (r > t) r = t;
+    if (r > t) {
+      r = t;
+    }
     const l = Math.easeInOutQuad(r, a, e - a, t);
     window.scrollTo(0, l);
     if (r < t) {
@@ -544,7 +550,9 @@ Util.scrollTo = function (e, t, n) {
 };
 
 Util.moveFocus = function (e) {
-  if (!e) e = document.getElementsByTagName("body")[0];
+  if (!e) {
+    e = document.getElementsByTagName("body")[0];
+  }
   e.focus();
   if (document.activeElement !== e) {
     e.setAttribute("tabindex", "-1");
@@ -558,7 +566,7 @@ Util.getIndexInArray = function (e, t) {
 
 Util.cssSupports = function (property, value) {
   // Verificar si CSS.supports está disponible
-  if ("CSS" in window && typeof CSS.supports === "function") {
+  if (typeof window.CSS !== "undefined" && typeof CSS.supports === "function") {
     return CSS.supports(property, value);
   } else {
     // Alternativa si CSS.supports no está disponible
@@ -569,11 +577,6 @@ Util.cssSupports = function (property, value) {
     );
   }
 };
-
-Element.prototype.matches =
-  Element.prototype.matches ||
-  Element.prototype.msMatchesSelector ||
-  Element.prototype.webkitMatchesSelector;
 
 if (typeof Element !== "undefined") {
   Element.prototype.matches =
@@ -592,6 +595,7 @@ if (typeof Element !== "undefined") {
       return null;
     };
 }
+
 if (typeof window.CustomEvent !== "function") {
   function CustomEvent(event, params) {
     params = params || { bubbles: false, cancelable: false, detail: undefined };
