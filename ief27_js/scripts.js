@@ -560,7 +560,7 @@ if (
       } while (null !== t && 1 === t.nodeType);
       return null;
     }),
-  "function" != typeof window.CustomEvent)
+  "function" !== typeof window.CustomEvent)
 ) {
   function CustomEvent(e, t) {
     t = t || { bubbles: !1, cancelable: !1, detail: void 0 };
@@ -636,15 +636,15 @@ if (
         var e = this.mq(),
           t = Util.hasClass(this.element, "js-schedule-loaded"),
           n = Util.hasClass(this.modal, "cd-schedule-modal--open");
-        "desktop" != e || t
-          ? "mobile" == e && t
+        "desktop" !== e || t
+          ? "mobile" === e && t
             ? (Util.removeClass(
                 this.element,
                 "cd-schedule--loading js-schedule-loaded"
               ),
               this.resetEventsStyle(),
               n && this.checkEventModal())
-            : "desktop" == e && n
+            : "desktop" === e && n
             ? (this.checkEventModal(n),
               Util.removeClass(this.element, "cd-schedule--loading"))
             : Util.removeClass(this.element, "cd-schedule--loading")
@@ -653,8 +653,9 @@ if (
             n && this.checkEventModal(n));
       }),
       (e.prototype.resetEventsStyle = function () {
-        for (var e = 0; e < this.singleEvents.length; e++)
+        for (var e = 0; e < this.singleEvents.length; e++) {
           this.singleEvents[e].removeAttribute("style");
+        }
       }),
       (e.prototype.placeEvents = function () {
         for (
@@ -675,11 +676,12 @@ if (
         Util.removeClass(this.element, "cd-schedule--loading");
       }),
       (e.prototype.initEvents = function () {
-        for (var e = this, t = 0; t < this.singleEvents.length; t++)
+        for (var e = this, t = 0; t < this.singleEvents.length; t++) {
           this.singleEvents[t].addEventListener("click", function (t) {
             t.preventDefault(),
               e.animating || e.openModal(this.getElementsByTagName("a")[0]);
           });
+        }
         this.modalClose.addEventListener("click", function (t) {
           t.preventDefault(), e.animating || e.closeModal();
         }),
@@ -700,7 +702,7 @@ if (
           this.modal.setAttribute("data-event", e.getAttribute("data-event")),
           this.loadEventContent(e.getAttribute("data-content")),
           Util.addClass(this.modal, "cd-schedule-modal--open"),
-          setTimeout(function () {
+          window.setTimeout(function () {
             Util.addClass(e.closest("li"), "cd-schedule__event--selected");
           }, 10),
           "mobile" == n)
@@ -809,14 +811,14 @@ if (
             (e.modalHeaderBg.style.transform = "scaleY(1)"),
             e.modalHeaderBg.addEventListener("transitionend", function t() {
               Util.addClass(e.modal, "cd-schedule-modal--no-transition"),
-                setTimeout(function () {
+                window.setTimeout(function () {
                   e.modal.removeAttribute("style"),
                     e.modalBody.removeAttribute("style"),
                     e.modalHeader.removeAttribute("style"),
                     e.modalHeaderBg.removeAttribute("style"),
                     e.modalBodyBg.removeAttribute("style");
                 }, 10),
-                setTimeout(function () {
+                window.setTimeout(function () {
                   Util.removeClass(e.modal, "cd-schedule-modal--no-transition");
                 }, 20),
                 (e.animating = !1),
@@ -856,7 +858,7 @@ if (
             c = 0.8 * l > t.modalMaxHeight ? t.modalMaxHeight : 0.8 * l,
             h = c / o,
             m = d - s;
-          setTimeout(function () {
+          window.setTimeout(function () {
             t.modal.setAttribute(
               "style",
               "top:" +
@@ -885,7 +887,7 @@ if (
                   ");"
               );
           }, 10),
-            setTimeout(function () {
+            window.setTimeout(function () {
               Util.removeClass(t.modal, "cd-schedule-modal--no-transition"),
                 (t.animating = !1);
             }, 20);
@@ -951,7 +953,7 @@ if (
           ((i = !0),
           window.requestAnimationFrame
             ? window.requestAnimationFrame(s)
-            : setTimeout(s, 250));
+            : window.setTimeout(s, 250));
       }),
         window.addEventListener("keyup", function (e) {
           if (
