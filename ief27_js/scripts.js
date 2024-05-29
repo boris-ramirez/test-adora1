@@ -422,9 +422,34 @@ if (
     const e = document.getElementById("speakers");
     let t = "",
       n = 0;
-    for (const e of speakersInfo)
-      (t += `\n\t\t\t<div class="large-4 medium-6 small-12 cell speakers__info">\n\t\t\t\t<div class="grid-x">\n\t\t\t\t\t<div class="large-4 medium-4 small-4 cell">\n\t\t\t\t\t\t<div class="speakers__info__img">\n\t\t\t\t\t\t\t<img src="${e.img}" alt="" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="large-8 medium-8 small-8 cell speakers__info__data">\n\t\t\t\t\t\t<div class="speakers__info__data_tag">\n\t\t\t\t\t\t\t${e.tag}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="speakers__info__data_presentation">\n\t\t\t\t\t\t\t${e.presentation}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="speakers__info__data_name">\n\t\t\t\t\t\t\t${e.name}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="speakers__info__data_anchor">\n\t\t\t\t\t\t\t<a onclick="showPresenterInfo(${n})">View More</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t`),
-        n++;
+    for (const e of speakersInfo) {
+      t += `
+        <div class="large-4 medium-6 small-12 cell speakers__info">
+          <div class="grid-x">
+            <div class="large-4 medium-4 small-4 cell">
+              <div class="speakers__info__img">
+                <img src="${e.img}" alt="" />
+              </div>
+            </div>
+            <div class="large-8 medium-8 small-8 cell speakers__info__data">
+              <div class="speakers__info__data_tag">
+                ${e.tag}
+              </div>
+              <div class="speakers__info__data_presentation">
+                ${e.presentation}
+              </div>
+              <div class="speakers__info__data_name">
+                ${e.name}
+              </div>
+              <div class="speakers__info__data_anchor">
+                <a onclick="showPresenterInfo(${n})">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      n++;
+    }
     e.innerHTML = t;
   })(),
   (Util.hasClass = function (e, t) {
@@ -441,8 +466,9 @@ if (
   }),
   (Util.removeClass = function (e, t) {
     var n = t.split(" ");
-    if (e.classList) e.classList.remove(n[0]);
-    else if (Util.hasClass(e, n[0])) {
+    if (e.classList) {
+      e.classList.remove(n[0]);
+    } else if (Util.hasClass(e, n[0])) {
       var a = new RegExp("(\\s|^)" + n[0] + "(\\s|$)");
       e.className = e.className.replace(a, " ");
     }
@@ -452,12 +478,17 @@ if (
     n ? Util.addClass(e, t) : Util.removeClass(e, t);
   }),
   (Util.setAttributes = function (e, t) {
-    for (var n in t) e.setAttribute(n, t[n]);
+    for (var n in t) {
+      e.setAttribute(n, t[n]);
+    }
   }),
   (Util.getChildrenByClassName = function (e, t) {
     e.children;
-    for (var n = [], a = 0; a < e.children.length; a++)
-      Util.hasClass(e.children[a], t) && n.push(e.children[a]);
+    for (var n = [], a = 0; a < e.children.length; a++) {
+      if (Util.hasClass(e.children[a], t)) {
+        n.push(e.children[a]);
+      }
+    }
     return n;
   }),
   (Util.setHeight = function (e, t, n, a, i) {
@@ -495,19 +526,24 @@ if (
   (Util.getIndexInArray = function (e, t) {
     return Array.prototype.indexOf.call(e, t);
   }),
-  (Util.cssSupports = function (e, t) {
-    return "CSS" in window
-      ? CSS.supports(e, t)
-      : e.replace(/-([a-z])/g, function (e) {
-          return e[1].toUpperCase();
-        }) in document.body.style;
+  (Util.cssSupports = function (property, value) {
+    if (typeof CSS !== "undefined" && typeof CSS.supports === "function") {
+      return CSS.supports(property, value);
+    } else {
+      // Alternativa si CSS.supports no está disponible
+      return (
+        property.replace(/-([a-z])/g, function (match, letter) {
+          return letter.toUpperCase();
+        }) in document.body.style
+      );
+    }
   }),
-  Element.prototype.matches ||
-    (Element.prototype.matches =
-      Element.prototype.msMatchesSelector ||
-      Element.prototype.webkitMatchesSelector),
-  Element.prototype.closest ||
-    (Element.prototype.closest = function (e) {
+  window.Element.prototype.matches ||
+    (window.Element.prototype.matches =
+      window.Element.prototype.msMatchesSelector ||
+      window.Element.prototype.webkitMatchesSelector),
+  window.Element.prototype.closest ||
+    (window.Element.prototype.closest = function (e) {
       var t = this;
       if (!document.documentElement.contains(t)) return null;
       do {
