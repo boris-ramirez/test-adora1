@@ -527,8 +527,12 @@ if (
     return Array.prototype.indexOf.call(e, t);
   }),
   (Util.cssSupports = function (property, value) {
-    if (typeof CSS !== "undefined" && typeof CSS.supports === "function") {
-      return CSS.supports(property, value);
+    if (
+      typeof window !== "undefined" &&
+      window.CSS &&
+      typeof window.CSS.supports === "function"
+    ) {
+      return window.CSS.supports(property, value);
     } else {
       // Alternativa si CSS.supports no está disponible
       return (
