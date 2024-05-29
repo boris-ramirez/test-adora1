@@ -28,11 +28,6 @@ jobs:
       - name: eslint code
         run: eslint "**/*.js"
 
-      - name: Show Prettier Changes
-        run: |
-          echo "Files changed by Prettier:"
-          find . -type f -name '*.js' -o -name '*.md' | xargs git diff --color
-
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
@@ -48,3 +43,8 @@ jobs:
 
       - name: Check HTML
         run: htmlproofer ./ --allow-missing-href
+
+      - name: Show Prettier Changes
+        run: |
+          echo "Files changed by Prettier:"
+          find . -type f -name '*.js' -o -name '*.md' | xargs git diff --color
